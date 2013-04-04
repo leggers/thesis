@@ -24,6 +24,9 @@
 \documentclass[aps,prl,preprint,groupedaddress]{revtex4}
 %\documentclass[aps,prl,preprint,superscriptaddress]{revtex4}
 %\documentclass[aps,prl,twocolumn,groupedaddress]{revtex4}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{fancyref}
 
 % You should use BibTeX and apsrev.bst for references
 % Choosing a journal automatically selects the correct APS
@@ -90,15 +93,50 @@ Better nanofluidic control over DNA will yield exciting leaps in technology, suc
 In order to isolate a single DNA molecule in the chamber, we need a way to deliver it and to know when it enters. Nanopores are the ideal device for such purposes. A nanopore is a small hole in a membrane, be it biological or synthetic. Silicon nanopores, also known as solid-state nanopores, consist of a hole approximately 10 nanometers across in some larger piece of silicon. For contrast, double-helical DNA is approximately 2.5 nanometers across. When placed between two reservoirs of ionic solution, solid-state nanopores can detect the passage of a single DNA molecule. This passage event is also known as a translocation. When a voltage bias is placed across the two reservoirs, current forms from ions flowing through the pore. DNA, driven by electrophoretic forces on its slight negative charge, travels toward the pore, eventually getting sucked through. Its passage displaces some flowing ions, causing an observable drop in the ionic current through the pore.
 
 In order to trap DNA in its isolation chamber, we intend to take advantage of the DNA’s configurational entropy. At equilibrium, DNA forms a random coil whose spherical shape has a size characterized by the radius of gyration (Rg). If we could get DNA in a cavity roughly the size of the radius of gyration with holes smaller than the radius of gyration on either side, we predict that the molecule will have a near-zero probability of diffusing out (Del Bonis-O’Donnel); it would have to squeeze too far out of equilibrium to exit this entropic trap.
-Figure 1: A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event. The structure has 3 main layers. From bottom to top they are the nanopore, the cavity, and a large hole with diameter approximately 500 nm on average.
 
-The device we envisioned to trap individual DNA molecules is shown in Figure 1. (Note that the molecule pictured is not trapped.) Capturing a DNA molecule in the cavity can be thought of as a competition between two forces: the force pushing the DNA through the structure and the drift of the tip of the molecule due to diffusion and electrophoretic effects. A translocation starts when the leading tip of DNA  - or someplace nearby on the polymer - enters the nanopore. A drop in current is observed. The molecule is driven through the cavity by local electric fields. The tip drifts as it crosses the cavity, possibly far enough to no longer enter the large opening when it reaches the far wall. This lateral movement is the crucial step; if the tip enters the large hole the molecule will almost certainly exit the structure, as depicted in Figure 1. The probability of exit is dependent on the cavity length and hole diameter. When the molecule finishes translocating the current will return to its original baseline value. Turning off the driving voltage as soon as possible after the translocation will allow the molecule to equilibrate inside the cavity, trapping it. Waiting too long to turn off the voltage increases the likelihood of exit by continuing to push the “skinny,” out-of-equilibrium DNA molecule toward the large exit opening. After the molecule has equilibrated, however, its expanded size would keep it in the cavity structure. 
+\begin{figure}
+\centering
+\includegraphics[width=.4\textwidth]{figures/nanopore-schematic}
+\caption{A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event. The structure has 3 main layers. From bottom to top they are the nanopore, the cavity, and a large hole with diameter approximately 500 nm on average.}
+\label{fig:nanopore-schematic}
+\end{figure}
 
-Placing such a structure between two reservoirs of ionic solution yields the translocation dynamics described above with a twist: the structure’s asymmetry means translocations from either side of the pore are not equivalent. Although the effects of the asymmetric structure on translocation dynamics will be touched on, Karri DiPetrillo’s thesis takes a deeper look at those phenomena. The focus of this thesis will be trapping DNA molecules approaching the exposed nanopore (the bottom layer in Figure 1). Our objectives are thus twofold: to develop the hardware (pores-plus-chambers) and the software (control electronics and data analysis) to make our vision a reality. My contribution was software for analysis and recommendations for programming control electronics. In addition to creating more intricate labs-on-a-chip and possibly storing DNA hard drives, creating such entropic traps would yield deeper understanding of DNA as a polymer more generally. 
+The device we envisioned to trap individual DNA molecules is shown in Fig.~\ref{fig:nanopore-schematic}. (Note that the molecule pictured is not trapped.) Capturing a DNA molecule in the cavity can be thought of as a competition between two forces: the force pushing the DNA through the structure and the drift of the tip of the molecule due to diffusion and electrophoretic effects. A translocation starts when the leading tip of DNA  - or someplace nearby on the polymer - enters the nanopore. A drop in current is observed. The molecule is driven through the cavity by local electric fields. The tip drifts as it crosses the cavity, possibly far enough to no longer enter the large opening when it reaches the far wall. This lateral movement is the crucial step; if the tip enters the large hole the molecule will almost certainly exit the structure, as depicted in Fig.~\ref{fig:nanopore-schematic}. The probability of exit is dependent on the cavity length and hole diameter. When the molecule finishes translocating the current will return to its original baseline value. Turning off the driving voltage as soon as possible after the translocation will allow the molecule to equilibrate inside the cavity, trapping it. Waiting too long to turn off the voltage increases the likelihood of exit by continuing to push the “skinny,” out-of-equilibrium DNA molecule toward the large exit opening. After the molecule has equilibrated, however, its expanded size would keep it in the cavity structure. 
+
+Placing such a structure between two reservoirs of ionic solution yields the translocation dynamics described above with a twist: the structure’s asymmetry means translocations from either side of the pore are not equivalent. Although the effects of the asymmetric structure on translocation dynamics will be touched on, Karri DiPetrillo’s thesis takes a deeper look at those phenomena. The focus of this thesis will be trapping DNA molecules approaching the exposed nanopore (the bottom layer in Fig.~\ref{fig:nanopore-schematic}). Our objectives are thus twofold: to develop the hardware (pores-plus-chambers) and the software (control electronics and data analysis) to make our vision a reality. My contribution was software for analysis and recommendations for programming control electronics. In addition to creating more intricate labs-on-a-chip and possibly storing DNA hard drives, creating such entropic traps would yield deeper understanding of DNA as a polymer more generally. 
 % Put \label in argument of \section for cross-referencing
 %\section{\label{}}
-\subsection{}
-\subsubsection{}
+\section{Background}
+
+\subsection{Quantifying DNA as a Polymer}
+
+The simplest model of a polymer in equilibrium has two parameters: length \(l\) and flexibility (a unitless constant). These two numbers describe a freely-jointed chain in which fixed lengths of polymer segments are connected by joints that can take any bond angle. The resulting shape of such an object is a sphere. Mathematically the chain can be described by a three-dimensional random walk. As such, one would expect the radius of the sphere, also known as the radius of gyration \(R_g\) to scale with the square root of the length of the chain. The flaw in such reasoning is that real polymers are self-avoiding, meaning that links in the chain cannot occupy the same space. The Flory model modifies the random walk by using a mean field approach (what is that?) to take into account this reality and predicts that, for DNA, \(R_g\) scales as \(l^{3/5}\). Experiments yield an exponent of approximately .588.
+
+To make the Flory model even more realistic, we must take into account Brownian motion. The Rouse model describes a polymer as a collection of beads connected by springs in which beads feel the effects of thermal forces and drags. It does not, however, take into account self-avoidance and as such is as useless as the Flory model. Zimm combined the two models by including the hydrodynamic interactions between different parts of the chain as mediated by the solvent. The Zimm model's predictions most exactly agree with experiment (can i get some numbers in here? need to read a paper or two but also think i need the coefficient of the exponent).
+
+The Zimm model predicts that a polymer enters its equilibrium state from any other state within a characteristic relaxation time. All translocations considered in our experiments occur on considerably smaller timescales than the Zimm time (derived below) and thus are called "fast translocations." To paint a physical picture of what that means, we imagine a randomly coiled rope being pulled off a table. As it is pulled, individual folds are sequentially straightened and pulled off the table. Only a small length of rope (the most recently straightened fold) is involved in the motion. The rest of the rope is stationary. The same things happens with DNA, but on a much smaller length scale (put in how many orders of magnitude here, for kicks). Folds of the molecule are sequentially straightened as they are sucked through the pore while the rest of the molecule is effectively frozen.
+
+Dorfman table values for lambda dna goes here
+
+\subsection{Understanding Nanopores}
+
+The first 
+
+\subsection{Trapping in More Detail}
+
+As stated above, trapping can be thought of as a competition between the movement of DNA through the pore-plus-cavity structure and the lateral drift of the tip. The major force pushing the DNA molecule though the structure is electrophoretic. We know that the current at a given distance from the pore is constant (wait but no it's not; the molecule entering changes it and when it folds it changes to. how do we claim that it's a constant?): 
+\begin{equation} I = const = 2 \pi R^2 J(R) \label{eq:constant-current}\end{equation} 
+where \(I\) is current, \(R\) is distance from pore, and \(J(R)\) is the current density. Solving Eq.~\ref{eq:constant-current} for \(J(R)\) and using the definition of \(J(R)\) we can derive an equation for the electric field: 
+\[J(R) = \frac{I}{2 \pi R^2}\] 
+\[\overrightarrow{J}(R) = \sigma \overrightarrow{E}(R)\] 
+\[\sigma E(R) = \frac{I}{2 \pi R^2}\] 
+\begin{equation} E(R) = \frac{I}{\sigma 2 \pi R^2} \label{eq:electric-field} \end{equation} 
+We know the velocity of the DNA molecule from the theory of electrophoresis: 
+\begin{equation} V_{\mathrm{DNA}} = \mu_{\mathrm{DNA}} E(R) \label{eq:velocity} \end{equation} 
+Plugging in Eq.~\ref{eq:constant-current} we see 
+\[V_{\mathrm{DNA}} = \frac{\mathrm{d}R}{\mathrm{d}t} = \mu_{\mathrm{DNA}} \frac{I}{\sigma 2 \pi R^2}\] 
+Integrating yields the tip's distance from the pore as a function of time: 
+\[\int \frac{\sigma 2 \pi R^2}{\mu_{\mathrm{DNA}} I} \mathrm{d}R = \int \mathrm{d}t \]
 
 % If in two-column mode, this environment will change to single-column
 % format so that long equations can be displayed. Use

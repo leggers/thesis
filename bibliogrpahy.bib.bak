@@ -1,6 +1,38 @@
 % This file was created with JabRef 2.9.2.
 % Encoding: US-ASCII
 
+@MISC{nick-thesis,
+  author = {Nick Hagarty},
+  title = {The Statistics of DNA Capture by a Solid State Nanopore},
+  howpublished = {Senior Thesis},
+  year = {2010},
+  owner = {leggerssignups},
+  timestamp = {2013.04.08}
+}
+
+@ARTICLE{stein-paper,
+  author = {J Li, M Gershow, D Stein, E Brandin, J Golovchenko},
+  title = {DNA molecules and configurations in a solid-state nanopore microscope},
+  journal = {Nature Materials},
+  year = {2003},
+  volume = {2},
+  pages = {611-5},
+  owner = {leggerssignups},
+  timestamp = {2013.04.08}
+}
+
+@ARTICLE{electrophoretic-paper,
+  author = {Stijn van Dorp, Ulrich F. Keyser, Nynke H. Dekker, Cees Dekker, Serge
+	G. Lemay},
+  title = {Origin of the electrophoretic force on DNA in solid-state nanopores},
+  journal = {Nature Physics},
+  year = {2009},
+  volume = {5},
+  pages = {347-51},
+  owner = {leggerssignups},
+  timestamp = {2013.04.08}
+}
+
 @PERIODICAL{dna-hard-drive,
   title = {Double Helix Serves Double Duty},
   year = {2013},

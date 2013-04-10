@@ -117,13 +117,9 @@ The simplest statistical model of a polymer in equilibrium has two parameters: t
 
 Timescales are provided by the Zimm model. Zimm combined the Flory and Rouse models by including the hydrodynamic interactions between different parts of the chain as mediated by the solvent. The Zimm model's predictions most exactly agree with experiment. The Zimm model predicts that a polymer enters its equilibrium state from any other state within a characteristic relaxation time \(\tau_z\). That is, if one stretched a DNA molecule to be completely straight, it would reach a spherical conformation in \(\tau_z\) seconds, maximum. The process of reaching such a sphere is known as relaxation. For \(\lambda\)-DNA \(\tau_z \approx 100\)ms. Our translocations last \(\approx 2\)ms, so molecules do not have time to equilibrate until long after they translate. Thus our translocations are called ``fast translocations.'' To paint a physical picture of what that means, we imagine a randomly coiled rope being pulled off a table. As it is pulled, individual folds are sequentially straightened and pulled off the table. Only a small length of rope (the most recently straightened fold) is involved in the motion. The rest of the rope is stationary. The same things happens with DNA, but on a much smaller length scale (put in how many orders of magnitude here, for kicks). Folds of the molecule are sequentially straightened as they are sucked through the pore while the rest of the molecule is effectively frozen.
 
-\subsection{Understanding Nanopores and Translocations (do you think i need this? i'm not so sure)}
-
-Nanopores are our integral experimental apparatus. They act as a molecular detector and funnel; isolating a single molecule and detecting its presence. A nanopore is a small hole in a thin membrane. 
-
 \subsection{Trapping in More Detail}
 
-Trapping can be thought of as a competition between the movement of DNA through the pore-plus-cavity structure and the equilibration of the molecule in the cavity. The major force pushing the DNA molecule though the structure is electrophoretic. We know that the current at a given distance from the pore is constant (wait but no it's not; the molecule entering changes it and when it folds it changes to. how do we claim that it's a constant? still don't get this. the current vs. time trace takes top-hat shapes which means I is definitely not a constant... is it a matter of timescales?): 
+Trapping can be thought of as a competition between the movement of DNA through the pore-plus-cavity structure and the equilibration of the molecule in the cavity. The major force pushing the DNA molecule though the structure is electrophoretic. From charge conservation we know that, to a good approximation, the current traveling through the pore (our measured quantity) is equal to the current passing through the area of hemisphere enclosing the pore: 
 \begin{equation} I = 2 \pi R^2 J(R) \label{eq:constant-current}\end{equation} 
 where \(I\) is current, \(R\) is distance from pore, and \(J(R)\) is the current density. Solving Eq.~\ref{eq:constant-current} for \(J(R)\) we see 
 \[J(R) = \frac{I}{2 \pi R^2}.\] 
@@ -132,18 +128,18 @@ By Ohm's Law we know
 where \(\sigma\) is two-dimensional charge density.
 Combining these equations and solving for E yields:
 \begin{equation} E(R) = \frac{I}{\sigma 2 \pi R^2} \label{eq:electric-field} \end{equation} 
-We know the velocity of the DNA molecule from the theory of electrophoresis: 
+We know the velocity of the DNA molecule a distance \(R\) from the pore: 
 \begin{equation} v_{\mathrm{DNA}} = \mu_{\mathrm{DNA}} E(R) \label{eq:velocity} .\end{equation} 
-Plugging in Eq.~\ref{eq:electric-field} we see 
+Plugging in Eq.~\ref{eq:electric-field} we see that
 \[v_{\mathrm{DNA}} = \frac{\mathrm{d}R}{\mathrm{d}t} = \mu_{\mathrm{DNA}} \frac{I}{\sigma 2 \pi R^2},\]
 where \(\mu_{DNA}\) is the electrophoretic mobility of DNA.
-Integrating yields the tip's distance from the pore as a function of time
-\[\int_{R=0}^{R(t)} \frac{\sigma 2 \pi R^2}{\mu_{\mathrm{DNA}} I} \mathrm{d}R = \int_{t=0}^{\Delta t} \mathrm{d}t \]
+Integrating yields the tip's distance from the pore and the elapsed time:
+\[\int_{R=0}^{R(\Delta t)} \frac{\sigma 2 \pi R^2}{\mu_{\mathrm{DNA}} I} \mathrm{d}R = \int_{t=0}^{\Delta t} \mathrm{d}t \]
 yields an equation
 \[\frac{1}{3} \frac{\sigma 2 \pi R^3}{\mu_{DNA} I} = \Delta t,\]
-which can be solved for \(R(t)\):
-\begin{equation} R(t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} .\label{eq:competition}\end{equation}
-Eq.~\ref{eq:competition} quantifies the race between relaxation and exit. Plugging in some values from our experiments, \(\mu_{DNA} = ???, I \approx 15\)na and \(\sigma = ???\), we see that the molecule travels \(\approx ???\) in the time it takes to translocate. This gives us a lower bound for cavity length. Because our cavities were \(\approx 2000\)nm long and we did not kill the voltage immediately after translocation, we captured no DNA molecules in our preliminary trials. We now understand why and are seeking to fabricate devices with longer chambers and build and program better control electronics to improve responsiveness. 
+which can be solved for \(R(\Delta t)\):
+\begin{equation} R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} .\label{eq:competition}\end{equation}
+Eq.~\ref{eq:competition} quantifies the location of the tip as a function of time. If \(R(\Delta t)\) is less than the height of the cavity, the molecule should be trapped. Even if the tip could travel outside of the chamber (that is, \(R(\Delta t)\) greater than cavity height), we believe the molecule will still be trapped with high probability if the center of mass is within the cavity. The center of mass, the point from which \(R_g\) is measured, should be at approximately \(R(\Delta t)/2\). Plugging in some values from our experiments, \(\mu_{DNA} = 3.75 \times 10^{-3}\)cm$^2$/V$\cdot$s, \( = 3.75 \times 10^{-7}\)m$^2$/V$\cdot$s \cite{mobility} \(I = 20 \mathrm{nA} = 2\times 10^{-8}\mathrm{A}, \Delta t = 2\mathrm{ms} = \mathrm{ms} = 2 \times 10^{-3}\)s and \(\sigma = 850\mu\)S \(= 8.5\times 10^{-4}\)S\cite{conductivity}, we see that the molecule travels \[R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} = \sqrt[3]{\frac{3\cdot 3.75\times 10^{-7}\cdot 2\times10^{-8}}{8.5\times10^{-4}\cdot 2\cdot \pi} 2\times10^{-3}}\] \[\approx 2.03 \times 10^{-5}\mathrm{m} = 2.03 \times 10^4 \mathrm{nm} \] in the time it takes to translocate. (half of?) This gives us a lower bound for cavity length. Because our cavities were roughly \(2000\)nm long and we did not kill the voltage immediately after translocation, we captured no DNA molecules in our preliminary trials. We now understand why and are seeking to fabricate devices with longer chambers and build and program better control electronics to improve responsiveness. 
 
 \section{Experiment}
 
@@ -168,6 +164,8 @@ Eq.~\ref{eq:competition} quantifies the race between relaxation and exit. Pluggi
 
 
 \subsubsection{``Ping-Pong'' Translocations}
+
+
 
 \section{Results and Discussion}
 

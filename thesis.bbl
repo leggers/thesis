@@ -21,8 +21,10 @@
   \bibfnamefont{Gelfi~C}}, \bibinfo{journal}{Biopo}
   \textbf{\bibinfo{volume}{42}}, \bibinfo{pages}{687} (\bibinfo{year}{1997}).
 
-\bibitem[{con()}]{conductivity}
-\emph{\bibinfo{title}{TRIS-EDTA BUFFER, pH 8.0}} (????),
-  \urlprefix\url{http://www.amresco-inc.com/TE-BUFFER-PH-8.0-E112.cmsx}.
+\bibitem[{\citenamefont{Haynes}(2012-2013)}]{CRC}
+\bibinfo{editor}{\bibfnamefont{W.~M.} \bibnamefont{Haynes}}, ed.,
+  \emph{\bibinfo{title}{CRC Handbook of Chemistry and Physics}}
+  (\bibinfo{publisher}{CRC Press}, \bibinfo{year}{2012-2013}),
+  \bibinfo{edition}{93rd} ed., \urlprefix\url{www.hbcpnetbase.com}.
 
 \end{thebibliography}

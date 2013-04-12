@@ -21,6 +21,19 @@
   timestamp = {2013.04.08}
 }
 
+@ARTICLE{mobility,
+  author = {Stellwagen NC, Gelfi C, Righetti PG},
+  title = {The free solution mobility of DNA},
+  journal = {Biopo},
+  year = {1997},
+  volume = {42},
+  pages = {687-703},
+  number = {6},
+  month = {Nov},
+  owner = {leggerssignups},
+  timestamp = {2013.04.10}
+}
+
 @ARTICLE{electrophoretic-paper,
   author = {Stijn van Dorp, Ulrich F. Keyser, Nynke H. Dekker, Cees Dekker, Serge
 	G. Lemay},
@@ -31,6 +44,17 @@
   pages = {347-51},
   owner = {leggerssignups},
   timestamp = {2013.04.08}
+}
+
+@BOOK{CRC,
+  title = {CRC Handbook of Chemistry and Physics},
+  publisher = {CRC Press},
+  year = {2012-2013},
+  editor = {W. M. Haynes},
+  edition = {93},
+  owner = {leggerssignups},
+  timestamp = {2013.04.12},
+  url = {www.hbcpnetbase.com}
 }
 
 @PERIODICAL{dna-hard-drive,

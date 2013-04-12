@@ -111,7 +111,7 @@ Placing such a structure between two reservoirs of ionic solution yields the tra
 
 \subsection{Quantifying DNA as a Polymer}
 
-To know how to trap a DNA molecule, we must understand the constraining length- and timescales. To find the lengthscales we use statistical models of polymers and to find timescales we use a model of polymer dynamics that agrees with the statistical models. We use \(\lambda\)-DNA in our experiments.
+In order to supply numbers to our currently hand-waving model of a trapped molecule, we need to explore both the statistical and dynamical properties of DNA.
 
 The simplest statistical model of a polymer in equilibrium has two parameters: total length \(L\) and persistence length \(p \ll L\). These two numbers describe a freely-jointed chain of length \(L\) in which rigid lengths of polymer of size \(p\) are connected by joints that can take any bond angle. The resulting shape of such an object is a sphere. Mathematically the chain can be described by a three-dimensional random walk. As such, one would expect the radius of the sphere, also known as the radius of gyration, to scale with the square root of the length of the chain: \(R_g \propto L^{1/2}\). The flaw in such reasoning is that real polymers are self-avoiding, meaning that links in the chain cannot occupy the same space. The Flory model modifies the random walk by using a mean field approach (where segments encounter one another with equal probability) to define a new parameter, the Flory exponent \(\nu_F\), where \(R_g \propto L^{\nu_F}\). The Flory model predicts that, for DNA, \(\nu_F = \frac{3}{5}\). Experiments yield an exponent of approximately .588. To make the Flory model even more realistic, we must take into account Brownian motion. The Rouse model describes a polymer as a collection of beads connected by springs in which beads feel the effects of thermal forces and drags. It does not, however, take into account self-avoidance and as such is as useless as the Flory model. 
 
@@ -139,7 +139,9 @@ yields an equation
 \[\frac{1}{3} \frac{\sigma 2 \pi R^3}{\mu_{DNA} I} = \Delta t,\]
 which can be solved for \(R(\Delta t)\):
 \begin{equation} R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} .\label{eq:competition}\end{equation}
-Eq.~\ref{eq:competition} quantifies the location of the tip as a function of time. If \(R(\Delta t)\) is less than the height of the cavity, the molecule should be trapped. Even if the tip could travel outside of the chamber (that is, \(R(\Delta t)\) greater than cavity height), we believe the molecule will still be trapped with high probability if the center of mass is within the cavity. The center of mass, the point from which \(R_g\) is measured, should be at approximately \(R(\Delta t)/2\). Plugging in some values from our experiments, \(\mu_{DNA} = 3.75 \times 10^{-3}\)cm$^2$/V$\cdot$s, \( = 3.75 \times 10^{-7}\)m$^2$/V$\cdot$s \cite{mobility} \(I = 20 \mathrm{nA} = 2\times 10^{-8}\mathrm{A}, \Delta t = 2\mathrm{ms} = \mathrm{ms} = 2 \times 10^{-3}\)s and \(\sigma = 850\mu\)S \(= 8.5\times 10^{-4}\)S\cite{conductivity}, we see that the molecule travels \[R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} = \sqrt[3]{\frac{3\cdot 3.75\times 10^{-7}\cdot 2\times10^{-8}}{8.5\times10^{-4}\cdot 2\cdot \pi} 2\times10^{-3}}\] \[\approx 2.03 \times 10^{-5}\mathrm{m} = 2.03 \times 10^4 \mathrm{nm} \] in the time it takes to translocate. (half of?) This gives us a lower bound for cavity length. Because our cavities were roughly \(2000\)nm long and we did not kill the voltage immediately after translocation, we captured no DNA molecules in our preliminary trials. We now understand why and are seeking to fabricate devices with longer chambers and build and program better control electronics to improve responsiveness. 
+Eq.~\ref{eq:competition} quantifies the location of the tip as a function of time. If \(R(\Delta t)\) is less than the height of the cavity, the molecule should be trapped. Even if the tip could travel outside of the chamber (that is, \(R(\Delta t)\) greater than cavity height), we believe the molecule will still be trapped with high probability if the center of mass is within the cavity. The center of mass, the point from which \(R_g\) is measured, should be at approximately \(R(\Delta t)/2\). The major assumption in this calculation is that current is conserved across a hemispherical geometry within the cavity. That may be true to a first approximation, but in reality all current must flow through the hole at the other end of the structure and thus the fields are ``squeezed'' into that hole; the molecule will travel slightly farther than expected as it reaches the far side.
+
+Now we will find an actual value for cavity size. Plugging in numbers from our experiments, \(\mu_{DNA} = 3.75 \times 10^{-3}\)cm$^2$/V$\cdot$s, \( = 3.75 \times 10^{-7}\)m$^2$/V$\cdot$s \cite{mobility} \(I = 20 \mathrm{nA} = 2\times 10^{-8}\mathrm{A}, \Delta t = 2\mathrm{ms} = \mathrm{ms} = 2 \times 10^{-3}\)s and \(\sigma = 100\)mS/m = 10 S/m\cite{CRC}, we see that the molecule travels \[R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} = \sqrt[3]{\frac{3\cdot 3.75\times 10^{-7}\cdot 2\times10^{-8}}{10\cdot 2\cdot \pi} 2\times10^{-3}}\] \[\approx 8.95 \times 10^{-7}\mathrm{m} = 895 \mathrm{nm} \] in the time it takes to translocate. Half of this (that is, 450nm) gives us a lower bound for cavity length. Because our cavities were roughly \(400\)nm long and we did not kill the voltage immediately after translocation, we captured no DNA molecules in our preliminary trials. We now understand why and are seeking to fabricate devices with longer chambers and build and program better control electronics to improve responsiveness. 
 
 \section{Experiment}
 
@@ -157,15 +159,15 @@ Eq.~\ref{eq:competition} quantifies the location of the tip as a function of tim
 
 \subsection{Data Analysis with MatLab}
 
-
+After collecting current vs. time data at a rate of 250kHz we ran it through our MatLab data analysis pipeline. Each data file contains one minute of data. Current is measured in nanoamps.
 
 \subsubsection{Monodirectional Translocations}
 
-
+The data analysis pipeline for monodirectional translocations starts with data sanitation. We run once through a given file, recording where events start and end. Our heuristic for detecting translocations in monodirectional experiments is deviation from a baseline value defined by the moving average of the previous 1ms of data (250 data points). [figure here] We also average the next 7 points, called the ``lookahead.'' If the lookahead is far enough away from the baseline (far enough being dependent on driving voltage and specified by the user, typically a quarter of a nanoamp at 100mV driving voltage), the ``new event'' variable is set to true. While true, [need to talk to Xu about the event end heuristic... don't quite get it]
 
 \subsubsection{``Ping-Pong'' Translocations}
 
-
+The data analysis pipeline for ``Ping-Pong'' experiments proceeds largely as above, but with more complicated event start and end detection. The added complication is due to the nastiness of the data [show a picture with whacked out baseline here]. We tried multiple ways to fit the exponential-seeming decay of the data and subtract it to allow us to use the exact event detection method above but failed. We resorted to using a moving average of the derivative of sorts (explain in more detail) to detect events as well.
 
 \section{Results and Discussion}
 

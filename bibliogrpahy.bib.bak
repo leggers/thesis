@@ -1,6 +1,30 @@
 % This file was created with JabRef 2.9.2.
 % Encoding: US-ASCII
 
+@ARTICLE{dorfman,
+  author = {Kevin D. Dorfman},
+  title = {DNA electrophoresis in microfabricated devices},
+  journal = {Reviews of Modern Physics},
+  year = {2010},
+  volume = {82},
+  pages = {2903-43},
+  owner = {leggerssignups},
+  timestamp = {2013.04.14},
+  url = {http://rmp.aps.org/pdf/RMP/v82/i4/p2903_1}
+}
+
+@ARTICLE{exponent,
+  author = {Fancesco Valle, Melanie Favre, Paolo De Los Rios, Angelo Rosa, and
+	Giovanni Deitler},
+  title = {Scaling exponents and probability distributions of DNA end-to-end
+	distance},
+  journal = {arXiv soft condensed matter},
+  year = {2008},
+  owner = {leggerssignups},
+  timestamp = {2013.04.14},
+  url = {http://arxiv.org/pdf/cond-mat/0503577.pdf}
+}
+
 @MISC{nick-thesis,
   author = {Nick Hagarty},
   title = {The Statistics of DNA Capture by a Solid State Nanopore},
@@ -19,6 +43,29 @@
   pages = {611-5},
   owner = {leggerssignups},
   timestamp = {2013.04.08}
+}
+
+@ARTICLE{trapping,
+  author = {JT Del Bonis-O'Donnell, W Reisner and D Stein},
+  title = {Pressure-driven DNA transport acros an artificial nanotopography},
+  journal = {New Journal of Physics},
+  year = {2009},
+  volume = {11},
+  owner = {leggerssignups},
+  timestamp = {2013.04.14}
+}
+
+@ARTICLE{nanopore-fabrication,
+  author = {Meng-Yue Wu, Ralph M. M. Smeets, Mathijs Zandbergen, Ulrike Ziese,
+	Diego Krapf, Philip E. Batson, Nynke H. Dekker, Cees Dekker, and
+	Henny W. Zandbergen},
+  title = {Control of Shape and Material Composition of Solid-State Nanopores},
+  journal = {Nano Letters},
+  year = {2009},
+  volume = {9},
+  pages = {479-84},
+  owner = {leggerssignups},
+  timestamp = {2013.04.14}
 }
 
 @ARTICLE{mobility,

@@ -89,39 +89,105 @@
 % References should be done using the \cite, \ref, and \label commands
 \section{Introduction}
 
-Better nanofluidic control over DNA will yield exciting leaps in technology, such as biochemical labs-on-a-chip and so-called DNA hard drives. We intend to get a few steps closer by making an isolation chamber to hold single DNA molecule in place. Such an isolation chamber would allow for the outcome of biochemical experiments to be observed on a per-molecule basis. It could also act as a storage medium for data encoded in DNA which can hold the equivalent of one million CDs in a single gram for 10,000 years\cite{dna-hard-drive}. We believe we can create such an isolation chamber based on entropic trapping, and combine it with a molecular detector called a nanopore.
+Better nanofluidic control over DNA will yield exciting leaps in technology, such as biochemical labs-on-a-chip and so-called DNA hard drives.
+We intend to get a few steps closer by making an isolation chamber to hold single DNA molecule in place.
+Such an isolation chamber would allow for the outcome of biochemical experiments to be observed on a per-molecule basis.
+It could also act as a storage medium for data encoded in DNA which can hold the equivalent of one million CDs in a single gram for 10,000 years\cite{dna-hard-drive}.
+We believe we can create such an isolation chamber based on entropic trapping, and combine it with a molecular detector called a nanopore.
 
-In order to isolate a single DNA molecule in the chamber, we need a way to deliver it and to know when it enters. Nanopores are the ideal device for such purposes. A nanopore is a small hole in a membrane, be it biological or synthetic. Solid-state nanopores consist of a hole approximately 10 nanometers across in some larger solid-state membrane. For contrast, double-helical DNA is approximately 2.5 nanometers across. When placed between two reservoirs of ionic solution, solid-state nanopores can detect the passage of a single DNA molecule. This passage event is also known as a translocation. When a voltage bias is placed across the two reservoirs, current forms from ions flowing through the pore. DNA, driven by electrophoretic forces on its slight negative charge, travels toward the pore, eventually getting sucked through. Its passage displaces some flowing ions, causing an observable drop in the ionic current through the pore.
+In order to isolate a single DNA molecule in the chamber, we need a way to deliver it and to know when it enters.
+Nanopores are the ideal device for such purposes.
+A nanopore is a small hole in a membrane, be it biological or synthetic.
+Solid-state nanopores consist of a hole approximately 10 nanometers across in some larger solid-state membrane.
+For contrast, double-helical DNA is approximately 2.5 nanometers across.
+When placed between two reservoirs of ionic solution, solid-state nanopores can detect the passage of a single DNA molecule.
+This passage event is also known as a translocation.
+When a voltage bias is placed across the two reservoirs, current forms from ions flowing through the pore.
+DNA, driven by electrophoretic forces on its slight negative charge, travels toward the pore, eventually getting sucked through.
+Its passage displaces some flowing ions, causing an observable drop in the ionic current through the pore.
 
-In order to trap DNA in its isolation chamber, we intend to take advantage of the DNA’s configurational entropy. At equilibrium, DNA forms a random coil whose spherical shape has a size characterized by the radius of gyration (Rg). If we could get DNA in a cavity that is roughly the size of the radius of gyration and that has holes smaller than the radius of gyration on either side, we predict that the molecule will have a near-zero probability of diffusing out (Del Bonis-O’Donnel); it would have to squeeze too far out of equilibrium to exit this entropic trap.
+In order to trap DNA in its isolation chamber, we intend to take advantage of the DNA’s configurational entropy.
+At equilibrium, DNA forms a random coil whose spherical shape has a size characterized by the radius of gyration (Rg).
+If we could get DNA in a cavity that is roughly the size of the radius of gyration and that has holes smaller than the radius of gyration on either side, we predict that the molecule will have a near-zero probability of diffusing out; it would have to squeeze too far out of equilibrium to exit this entropic trap.\cite{trapping}
 
 \begin{figure}
 \centering
 \includegraphics[width=.4\textwidth]{figures/nanopore-schematic}
-\caption{A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event. The structure has 3 main layers. From bottom to top they are the nanopore, the cavity, and a large hole with diameter approximately 500 nm on average.}
+\caption{A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event.
+The structure has 3 main layers.
+From bottom to top they are the nanopore, the cavity, and a large hole with diameter 500nm on average.}
 \label{fig:nanopore-schematic}
 \end{figure}
 
-The device we envisioned to trap individual DNA molecules is shown in Fig.~\ref{fig:nanopore-schematic}. (Note that the molecule pictured is not trapped.) Capturing a DNA molecule in the cavity can be thought of as a competition between two timescales: the time required to push the center of mass of the DNA through the structure and the time it takes the DNA molecule to equilibrate in the cavity so it cannot traverse the large hole. A translocation starts when the leading tip of DNA  - or someplace nearby on the polymer - enters the nanopore. A drop in current is observed. The molecule is driven through the cavity by local electric fields. As it is driven, Brownian motion causes the molecule to start to equilibrate and expand to fill the chamber. However, translocation happens much faster than equilibration, so the molecule remains ``skinny'' when compared to the large hole; continuing to push it will cause it to exit the structure. Thus, the probability of exit is dependent on the cavity length and hole diameter. When the molecule finishes translocating the current will return to its original baseline value. Turning off the driving voltage at the right moment (too ambiguous? i feel like we could turn off voltage a little before translocation ends if we could calculate it on the fly) will allow the molecule to equilibrate inside the cavity, trapping it.
+The device we envisioned to trap individual DNA molecules is shown in Fig.~\ref{fig:nanopore-schematic}.
+(Note that the molecule pictured is not trapped.) Capturing a DNA molecule in the cavity can be thought of as a competition between two timescales: the time required to push the center of mass of the DNA through the structure and the time it takes the DNA molecule to equilibrate in the cavity so it cannot traverse the large hole.
+A translocation starts when the leading tip of DNA  - or someplace nearby on the polymer - enters the nanopore.
+A drop in current is observed.
+The molecule is driven through the cavity by local electric fields.
+As it is driven, Brownian motion causes the molecule to start to equilibrate and expand to fill the chamber.
+However, translocation happens much faster than equilibration, so the molecule remains ``skinny'' when compared to the large hole; continuing to push it will cause it to exit the structure.
+Thus, the probability of exit is dependent on the cavity length and hole diameter.
+When the molecule finishes translocating the current will return to its original baseline value.
+Turning off the driving voltage at the right moment will allow the molecule to equilibrate inside the cavity, trapping it.
 
-Placing such a structure between two reservoirs of ionic solution yields the translocation dynamics described above with a twist: the structure’s asymmetry means translocations from either side of the pore are not equivalent. Although the effects of the asymmetric structure on translocation dynamics will be touched on, Karri DiPetrillo's thesis takes a deeper look at those phenomena. The focus of this thesis will be trapping DNA molecules approaching the exposed nanopore (the bottom layer in Fig.~\ref{fig:nanopore-schematic}). Our objectives are thus twofold: to develop the hardware (pores-plus-chambers) and the software (control electronics and data analysis) to make our vision a reality. My contributions were software for analysis and recommendations for programming control electronics informed by my preliminary experiments and theoretical calculation. In addition to creating more intricate labs-on-a-chip and possibly storing DNA hard drives, creating such entropic traps would yield deeper understanding of DNA as a polymer more generally. 
+Placing such a structure between two reservoirs of ionic solution yields the translocation dynamics described above with a twist: the structure’s asymmetry means translocations from either side of the pore are not equivalent.
+Although the effects of the asymmetric structure on translocation dynamics will be touched on, Karri DiPetrillo's thesis takes a deeper look at those phenomena.
+The focus of this thesis will be trapping DNA molecules approaching the exposed nanopore (the bottom layer in Fig.~\ref{fig:nanopore-schematic}).
+Our objectives are thus twofold: to develop the hardware (pores-plus-chambers) and the software (control electronics and data analysis) to make our vision a reality.
+My contributions were software for analysis and recommendations for programming control electronics informed by my preliminary experiments and theoretical calculations.
+In addition to creating more intricate labs-on-a-chip and possibly storing DNA hard drives, creating such entropic traps would yield deeper understanding of DNA as a polymer more generally.
+
 % Put \label in argument of \section for cross-referencing
 %\section{\label{}}
 \section{Theory}
 
+Thought: I should have a ``feasibility of trapping'' section at the end of the theory where i plug in numbers from our structures and for lambda dna instead of dispersing them throughout the two current sections
+
 \subsection{Quantifying DNA as a Polymer}
 
-In order to supply numbers to our currently hand-waving model of a trapped molecule, we need to explore both the statistical and dynamical properties of DNA.
+We know the molecule can be entropically trapped when \(R_g\) is greater than the constraining length, in our case the large hole opposite the nanopore.
+The expanded, randomly (coiled, configured?) molecule at equilibrium would have to squeeze itself in an energetically unfavorable way to fit through the large hole.\cite{trapping}
+The molecule equilibrates to \(R_g\) in a characteristic time we also need to know to asses the feasibility of trapping;
+\(R_g\) does not matter if the molecule has already passed the constraining feature of the structure before it equilibrates.
+We used linearized \(\lambda\)-DNA in our experiments so I will use its properties to get values in units like meters and seconds from equations.
 
-The simplest statistical model of a polymer in equilibrium has two parameters: total length \(L\) and persistence length \(p \ll L\). These two numbers describe a freely-jointed chain of length \(L\) in which rigid lengths of polymer of size \(p\) are connected by joints that can take any bond angle. The resulting shape of such an object is a sphere. Mathematically the chain can be described by a three-dimensional random walk. As such, one would expect the radius of the sphere, also known as the radius of gyration, to scale with the square root of the length of the chain: \(R_g \propto L^{1/2}\). The flaw in such reasoning is that real polymers are self-avoiding, meaning that links in the chain cannot occupy the same space. The Flory model modifies the random walk by using a mean field approach (where segments encounter one another with equal probability) to define a new parameter, the Flory exponent \(\nu_F\), where \(R_g \propto L^{\nu_F}\). The Flory model predicts that, for DNA, \(\nu_F = \frac{3}{5}\). Experiments yield an exponent of approximately .588. To make the Flory model even more realistic, we must take into account Brownian motion. The Rouse model describes a polymer as a collection of beads connected by springs in which beads feel the effects of thermal forces and drags. It does not, however, take into account self-avoidance and as such is as useless as the Flory model. 
+In the simplest models of polymer statistics at equilibrium we consider only two properties of the molecule: its total length \(L\) and persistence length \(l_p \ll L\).
+\(l_p\) can be thought of as a measure of the stiffness of the molecule.
+These two numbers describe a freely-jointed chain of length \(L\) in which rigid lengths of polymer of size \(p\) are connected by joints that can take any bond angle.
+The resulting shape of such an object is a sphere.
+Mathematically the chain can be described by a three-dimensional random walk.
+As such, one would expect the radius of the sphere, also known as the radius of gyration, to scale with the square root of the length of the chain: \(R_g \propto L^{1/2}\).
+The flaw in such reasoning is that real polymers are self-avoiding, meaning that links in the chain cannot occupy the same space.
+The Flory model modifies the random walk by using a mean field approach (where segments encounter one another with equal probability) to define a new parameter, the Flory exponent \(\nu_F\), where \(R_g \propto L^{\nu_F}\).
+The Flory model predicts that, for DNA, \(\nu_F = \frac{3}{5}\).
+Simulations and experiments yield an exponent of approximately .588.\cite{exponent}
+For \(\lambda\)-DNA \(R_g\) is \(0.73\mu\)m.
+To make the Flory model even more realistic, we must take into account Brownian motion.
+The Rouse model describes a polymer as a collection of beads connected by springs in which beads feel the effects of thermal forces and drags.
+It does not, however, take into account self-avoidance and as such is more useless than the Flory model. 
 
-Timescales are provided by the Zimm model. Zimm combined the Flory and Rouse models by including the hydrodynamic interactions between different parts of the chain as mediated by the solvent. The Zimm model's predictions most exactly agree with experiment. The Zimm model predicts that a polymer enters its equilibrium state from any other state within a characteristic relaxation time \(\tau_z\). That is, if one stretched a DNA molecule to be completely straight, it would reach a spherical conformation in \(\tau_z\) seconds, maximum. The process of reaching such a sphere is known as relaxation. For \(\lambda\)-DNA \(\tau_z \approx 100\)ms. Our translocations last \(\approx 2\)ms, so molecules do not have time to equilibrate until long after they translate. Thus our translocations are called ``fast translocations.'' To paint a physical picture of what that means, we imagine a randomly coiled rope being pulled off a table. As it is pulled, individual folds are sequentially straightened and pulled off the table. Only a small length of rope (the most recently straightened fold) is involved in the motion. The rest of the rope is stationary. The same things happens with DNA, but on a much smaller length scale (put in how many orders of magnitude here, for kicks). Folds of the molecule are sequentially straightened as they are sucked through the pore while the rest of the molecule is effectively frozen.
+Timescales are provided by the Zimm model.
+Zimm combined the Flory and Rouse models by including the hydrodynamic interactions between different parts of the chain as mediated by the solvent.
+The Zimm model's predictions most exactly agree with experiment. The Zimm model predicts that a polymer enters its equilibrium state from any other state within a characteristic relaxation time \(\tau_z\).
+That is, if one stretched a DNA molecule to be completely straight, it would reach a spherical conformation in \(\tau_z\) seconds, maximum.
+The process of reaching such a sphere is known as relaxation.
+For \(\lambda\)-DNA \(\tau_z \approx 100\)ms.
+Our translocations last \(\approx 2\)ms, so molecules do not have time to equilibrate until long after they translate.
+Thus our translocations are called ``fast translocations.'' To paint a physical picture of what that means, we imagine a randomly coiled rope being pulled off a table.
+As it is pulled, individual folds are sequentially straightened and pulled off the table.
+Only a small length of rope (the most recently straightened fold) is involved in the motion.
+The rest of the rope is stationary.
+The same things happens with DNA, but on a much smaller length scale (put in how many orders of magnitude here, for kicks).
+Folds of the molecule are sequentially straightened as they are sucked through the pore while the rest of the molecule is effectively frozen.
 
 \subsection{Trapping in More Detail}
 
-Trapping can be thought of as a competition between the movement of DNA through the pore-plus-cavity structure and the equilibration of the molecule in the cavity. The major force pushing the DNA molecule though the structure is electrophoretic. From charge conservation we know that, to a good approximation, the current traveling through the pore (our measured quantity) is equal to the current passing through the area of hemisphere enclosing the pore: 
+Trapping can be thought of as a competition between the movement of DNA through the pore-plus-cavity structure and the equilibration of the molecule in the cavity.
+The major force pushing the DNA molecule though the structure is electrophoretic.
+From charge conservation we know that, to a good approximation, the current traveling through the pore (our measured quantity) is equal to the current passing through the area of hemisphere enclosing the pore: 
 \begin{equation} I = 2 \pi R^2 J(R) \label{eq:constant-current}\end{equation} 
-where \(I\) is current, \(R\) is distance from pore, and \(J(R)\) is the current density. Solving Eq.~\ref{eq:constant-current} for \(J(R)\) we see 
+where \(I\) is current, \(R\) is distance from pore, and \(J(R)\) is the current density.
+Solving Eq.~\ref{eq:constant-current} for \(J(R)\) we see 
 \[J(R) = \frac{I}{2 \pi R^2}.\] 
 By Ohm's Law we know 
 \[\overrightarrow{J}(R) \equiv \sigma \overrightarrow{E}(R),\]
@@ -139,15 +205,44 @@ yields an equation
 \[\frac{1}{3} \frac{\sigma 2 \pi R^3}{\mu_{DNA} I} = \Delta t,\]
 which can be solved for \(R(\Delta t)\):
 \begin{equation} R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} .\label{eq:competition}\end{equation}
-Eq.~\ref{eq:competition} quantifies the location of the tip as a function of time. If \(R(\Delta t)\) is less than the height of the cavity, the molecule should be trapped. Even if the tip could travel outside of the chamber (that is, \(R(\Delta t)\) greater than cavity height), we believe the molecule will still be trapped with high probability if the center of mass is within the cavity. The center of mass, the point from which \(R_g\) is measured, should be at approximately \(R(\Delta t)/2\). The major assumption in this calculation is that current is conserved across a hemispherical geometry within the cavity. That may be true to a first approximation, but in reality all current must flow through the hole at the other end of the structure and thus the fields are ``squeezed'' into that hole; the molecule will travel slightly farther than expected as it reaches the far side.
+Eq.~\ref{eq:competition} quantifies the location of the tip as a function of time.
+If \(R(\Delta t)\) is less than the height of the cavity, the molecule should be trapped.
+Even if the tip could travel outside of the chamber (that is, \(R(\Delta t)\) greater than cavity height), we believe the molecule will still be trapped with high probability if the center of mass is within the cavity.
+The center of mass, the point from which \(R_g\) is measured, should be at approximately \(R(\Delta t)/2\).
+The major assumption in this calculation is that current is conserved across a hemispherical geometry within the cavity.
+That may be true to a first approximation, but in reality all current must flow through the hole at the other end of the structure and thus the fields are ``squeezed'' into that hole; the molecule will travel slightly farther than expected as it reaches the far side.
 
-Now we will find an actual value for cavity size. Plugging in numbers from our experiments, \(\mu_{DNA} = 3.75 \times 10^{-3}\)cm$^2$/V$\cdot$s, \( = 3.75 \times 10^{-7}\)m$^2$/V$\cdot$s \cite{mobility} \(I = 20 \mathrm{nA} = 2\times 10^{-8}\mathrm{A}, \Delta t = 2\mathrm{ms} = \mathrm{ms} = 2 \times 10^{-3}\)s and \(\sigma = 100\)mS/m = 10 S/m\cite{CRC}, we see that the molecule travels \[R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} = \sqrt[3]{\frac{3\cdot 3.75\times 10^{-7}\cdot 2\times10^{-8}}{10\cdot 2\cdot \pi} 2\times10^{-3}}\] \[\approx 8.95 \times 10^{-7}\mathrm{m} = 895 \mathrm{nm} \] in the time it takes to translocate. Half of this (that is, 450nm) gives us a lower bound for cavity length. Because our cavities were roughly \(400\)nm long and we did not kill the voltage immediately after translocation, we captured no DNA molecules in our preliminary trials. We now understand why and are seeking to fabricate devices with longer chambers and build and program better control electronics to improve responsiveness. 
+Now we will find an actual value for cavity size.
+Plugging in numbers from our experiments, \(\mu_{DNA} = 3.75 \times 10^{-3}\)cm$^2$/V$\cdot$s, \( = 3.75 \times 10^{-7}\)m$^2$/V$\cdot$s \cite{mobility} \(I = 20 \mathrm{nA} = 2\times 10^{-8}\mathrm{A}, \Delta t = 2\mathrm{ms} = \mathrm{ms} = 2 \times 10^{-3}\)s and \(\sigma = 100\)mS/m = 10 S/m\cite{CRC}, we see that the molecule travels \[R(\Delta t) = \sqrt[3]{\frac{3 \mu_{DNA} I}{\sigma 2 \pi}\Delta t} = \sqrt[3]{\frac{3\cdot 3.75\times 10^{-7}\cdot 2\times10^{-8}}{10\cdot 2\cdot \pi} 2\times10^{-3}}\] \[\approx 8.95 \times 10^{-7}\mathrm{m} = 895 \mathrm{nm} \] in the time it takes to translocate.
+Half of this (that is, 450nm) gives us a lower bound for cavity length.
+Because our cavities were roughly \(400\)nm long and we did not kill the voltage immediately after translocation, we captured no DNA molecules in our preliminary trials.
+We now understand why and are seeking to fabricate devices with longer chambers and build and program better control electronics to improve responsiveness.
+
 
 \section{Experiment}
 
 \subsection{Synthesis of Nanopores}
 
+We fabricated our nanopore-plus-cavity structures to entropically trap DNA molecules using methods similar to Zandbergen et al.\cite{nanopore-fabrication}
+We start with large wafers with the layers seen in Fig.~\ref{fig:structure-schematic} manufactured by the Cornell Nanofabrication Facility.
+We first use two types of etching to burn through the top two layers of the wafer to gain access to layers in which we make more interesting structures.
+The top layers are present due to constraints of the manufacturing process.
+We first use thermal plasma etching to remove the top silicon nitride layer followed by potassium hydroxide base to remove the pure silicon.
+We then use a Focused Ion Beam (FIB) to create holes in the middle layer of SiN with diameters ranging from 150 to 900 nanometers and height 400nm.
+This diameter is the constraining feature of the setup that entropically traps DNA.
+The FIB hole allows access to the silicon oxide layer which is etched using hydrofluoric acid, creating a chamber 1-2\(\mu\)m in diameter and 400nm tall in the our experiments.
+Recent wafer orders have a taller layer of silicon oxide, enabling us to make taller chambers.
+Last, but not least, we create the nanopore in the final layer of silicon nitride roughly 10nm in diameter and 20nm tall using a Transition Electron Microscope.
+This novel structure is ideal for entropic trapping because it places the cavity that will trap the molecule directly adjacent to the molecular detector.
+Thus we can necessarily know when a candidate for trapping enters the chamber.
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.45\textwidth]{figures/structure-schematic}
+\caption{A more specific schematic of our structure including methods of feature creation. Note: Not to scale.}
+\label{fig:structure-schematic}
+\end{figure}
 
 \subsection{DNA Preparation and Apparatus Setup}
 
@@ -159,15 +254,54 @@ Now we will find an actual value for cavity size. Plugging in numbers from our e
 
 \subsection{Data Analysis with MatLab}
 
-After collecting current vs. time data at a rate of 250kHz we ran it through our MatLab data analysis pipeline. Each data file contains one minute of data. Current is measured in nanoamps.
+After collecting current vs. time data at a rate of 250kHz we ran it through our MatLab data analysis pipeline.
+Each data file contains one minute of data.
+Current, measured in nanoamps, can be positive or negative (depending on driving voltage) but only its absolute value is used in computations to simplify algorithms.
 
 \subsubsection{Monodirectional Translocations}
 
-The data analysis pipeline for monodirectional translocations starts with data sanitation. We run once through a given file, recording where events start and end. Our heuristic for detecting translocations in monodirectional experiments is deviation from a baseline value defined by the moving average of the previous 1ms of data (250 data points). [figure here] We also average the next 7 points, called the ``lookahead.'' If the lookahead is far enough away from the baseline (far enough being dependent on driving voltage and specified by the user, typically a quarter of a nanoamp at 100mV driving voltage), the ``new event'' variable is set to true. While true, [need to talk to Xu about the event end heuristic... don't quite get it]
+The data analysis pipeline for monodirectional translocations starts with data sanitation.
+We run once through a given file recording where events start and end.
+Our heuristic for detecting translocations in monodirectional experiments is deviation from a baseline value \(\beta\) defined by the moving average of the previous 1ms of data (250 data points).
+We average the next 7 points, called the ``lookahead'' or ``EventTest'' \(\Lambda\) and see if it exceeds our threshold for an event.
+The last piece of data used to find event boundaries is the root mean square of the baseline \(\Omega = \beta_{RMS}\).
+The RMS provides a good measure of the amount of variability, also known as noise, in the baseline.
+Each of these values is calculated tens of thousands of times per file as it is traversed from start to end with a step size of \(1/50^{th}\) of a millisecond (5 data points). (dereK: should i break beta and lambda and omega into separated equations and define them that way?)
+\begin{figure}[h]
+\centering
+\includegraphics[width=.8\textwidth]{figures/find-events}
+\caption{A representation of how our MatLab script finds events in monodirectional data. Important features of the data are its relatively static baseline and event structure. The data pictured has been run through a 50kHz software filter for legibility; typical data is much noisier.}
+\label{fig:find-events}
+\end{figure}
+
+If the lookahead is far enough away from the baseline (``far enough'' \(\Delta\) being dependent on driving voltage and specified by the user, typically a quarter of a nanoamp at 100mV), we know we may have found an event \(\xi\):
+\begin{equation} |\beta_{start}| - |\Lambda| \geq \Delta \Rightarrow \xi = \top \label{eq:event-start}\end{equation}
+where \(\beta\) is baseline value, \(\Lambda\) is lookahead value, \(\Delta\) is the cutoff value, and \(\xi\) is a boolean value specifying whether we believe we are in an event.
+We save \(\beta_{start}\) to use when detecting the end of the event and continue taking the averages (\(\beta, \Lambda\)) and RMS measurements (\(\Omega\)) as stated above.
+Instead of using a specified threshold as we did when detecting the start of an event, we determine the end of event by checking if the lookahead is greater than the saved baseline minus one tenth of the RMS (remember, all values are positive):
+\begin{equation}|\Lambda| \geq |\beta_{start}| - \frac{|\Omega|}{10}. \label{eq:event-end}\end{equation}
+The other way an event can ``end'' is by being longer than 20 milliseconds at which point we know that the event flag fired likely due to noise or a shifted baseline.
+There are two possible extremes for an RMS value to take: the smallest is the noise during an event (which is identical to the noise on the baseline); the largest is if the baseline spans multiple current blockage levels.
+We correct for this possibly large disparity by using only one tenth of the RMS value.
+It ensures no false triggering if the RMS is large while retaining accuracy for small RMS values because the lookahead should return to the baseline after an event.
+We finish data sanitation by subtracting \(\beta_{start}\) from all data points in an event to shift the baseline to zero and then set all points outside the recorded start and end (with some buffer) of the event to zero.
+
+We then proceed to event classification.
+We construct a histogram of current values for all translocations by summing all data points in events. [figure here of histogram]
+We fit the histogram using a double-peaked Gaussian fit function and take the value of the first (and typically tallest) peak as the current blockage of a non-folded translocation.
+We prompt the user to either agree that the peak value was properly fitted or to specify one.
+We use that value to determine the other current blockage levels (which are linear with respect to number of folds) and run through all events as we ran through baseline, classifying them according to the pattern of levels.
+The user then verifies that the given classification is correct, supplies one, or rejects the event.
+The final step in event processing is calculating ECD, which is done by summing all data points in an event.
+The rest of the pipeline takes analyzed data and creates graphs (making it useful but uninteresting technically).
+
 
 \subsubsection{``Ping-Pong'' Translocations}
 
-The data analysis pipeline for ``Ping-Pong'' experiments proceeds largely as above, but with more complicated event start and end detection. The added complication is due to the nastiness of the data [show a picture with whacked out baseline here]. We tried multiple ways to fit the exponential-seeming decay of the data and subtract it to allow us to use the exact event detection method above but failed. We resorted to using a moving average of the derivative of sorts (explain in more detail) to detect events as well.
+The data analysis pipeline for ``Ping-Pong'' experiments proceeds largely as above, but with more complicated event start and end detection.
+The added complication is due to the nastiness of the data [show a picture with whacked out baseline here].
+We tried multiple ways to fit the exponential-seeming decay of the data and subtract it to allow us to use the exact event detection method above but failed.
+We resorted to using a moving average of the derivative of sorts (explain in more detail) to detect events as well.
 
 \section{Results and Discussion}
 

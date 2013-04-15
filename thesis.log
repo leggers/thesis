@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  12 APR 2013 16:08
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  15 APR 2013 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,44 +508,59 @@ e
 File: figures/nanopore-schematic.png Graphic file (type png)
 
 <use figures/nanopore-schematic.png>
-Package pdftex.def Info: figures/nanopore-schematic.png used on input line 100.
+Package pdftex.def Info: figures/nanopore-schematic.png used on input line 115.
 
 (pdftex.def)             Requested size: 187.19714pt x 168.74368pt.
- [2] [3 <./figures/nanopore-schematic.png>] [4] [5] [6] (./thesis.bbl
+ [2] [3 <./figures/nanopore-schematic.png>] [4] [5] [6] [7]
+<figures/structure-schematic.png, id=39, 503.481pt x 385.44pt>
+File: figures/structure-schematic.png Graphic file (type png)
+
+<use figures/structure-schematic.png>
+Package pdftex.def Info: figures/structure-schematic.png used on input line 242
+.
+(pdftex.def)             Requested size: 210.59857pt x 161.22498pt.
+
+<figures/find-events.png, id=41, 630.1944pt x 291.0072pt>
+File: figures/find-events.png Graphic file (type png)
+
+<use figures/find-events.png>
+Package pdftex.def Info: figures/find-events.png used on input line 272.
+(pdftex.def)             Requested size: 374.40143pt x 172.88722pt.
+ [8 <./figures/structure-schematic.png>] [9 <./figures/find-events.png>] [10] (
+./thesis.bbl
 Underfull \hbox (badness 2556) in paragraph at lines 16--18
 []\OT1/cmr/m/it/10.95 Double he-lix serves dou-ble duty \OT1/cmr/m/n/10.95 (201
 3), URL $\OT1/cmtt/m/n/10.95 http : / / www . nytimes . com / 2013 / 01 / 29 /
  []
 
-[7]) [8] (./thesis.aux) ) 
+) [11] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4712 strings out of 493488
- 63348 string characters out of 3141326
- 138925 words of memory out of 3000000
- 7955 multiletter control sequences out of 15000+200000
+ 4736 strings out of 493488
+ 63900 string characters out of 3141326
+ 138125 words of memory out of 3000000
+ 7977 multiletter control sequences out of 15000+200000
  9964 words of font info for 36 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,13n,23p,1436b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
-fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
-b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
->
-Output written on thesis.pdf (8 pages, 492667 bytes).
+ 38i,13n,23p,643b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on thesis.pdf (11 pages, 691484 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

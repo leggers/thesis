@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{6}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -16,6 +16,19 @@
 \emph{\bibinfo{title}{Double helix serves double duty}} (\bibinfo{year}{2013}),
   \urlprefix\url{http://www.nytimes.com/2013/01/29/science/using-dna-to-store-digital-information.html}.
 
+\bibitem[{\citenamefont{JT~Del Bonis-O'Donnell and Stein}(2009)}]{trapping}
+\bibinfo{author}{\bibfnamefont{W.~R.} \bibnamefont{JT~Del Bonis-O'Donnell}}
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Stein}},
+  \bibinfo{journal}{New Journal of Physics} \textbf{\bibinfo{volume}{11}}
+  (\bibinfo{year}{2009}).
+
+\bibitem[{\citenamefont{Fancesco~Valle and Deitler}(2008)}]{exponent}
+\bibinfo{author}{\bibfnamefont{P.~D. L. R. A.~R.} \bibnamefont{Fancesco~Valle},
+  \bibfnamefont{Melanie~Favre}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Deitler}},
+  \bibinfo{journal}{arXiv soft condensed matter}  (\bibinfo{year}{2008}),
+  \urlprefix\url{http://arxiv.org/pdf/cond-mat/0503577.pdf}.
+
 \bibitem[{\citenamefont{Stellwagen~NC}(1997)}]{mobility}
 \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Stellwagen~NC},
   \bibfnamefont{Gelfi~C}}, \bibinfo{journal}{Biopo}
@@ -26,5 +39,14 @@
   \emph{\bibinfo{title}{CRC Handbook of Chemistry and Physics}}
   (\bibinfo{publisher}{CRC Press}, \bibinfo{year}{2012-2013}),
   \bibinfo{edition}{93rd} ed., \urlprefix\url{www.hbcpnetbase.com}.
+
+\bibitem[{\citenamefont{Meng-Yue~Wu and
+  Zandbergen}(2009)}]{nanopore-fabrication}
+\bibinfo{author}{\bibfnamefont{M.~Z. U. Z. D. K. P. E. B. N. H. D. C.~D.}
+  \bibnamefont{Meng-Yue~Wu}, \bibfnamefont{Ralph M. M.~Smeets}}
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{H.~W.}
+  \bibnamefont{Zandbergen}}, \bibinfo{journal}{Nano Letters}
+  \textbf{\bibinfo{volume}{9}}, \bibinfo{pages}{479} (\bibinfo{year}{2009}),
+  \urlprefix\url{http://pubs.acs.org/doi/abs/10.1021/nl803613s}.
 
 \end{thebibliography}

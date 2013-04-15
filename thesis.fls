@@ -111,7 +111,13 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT figures/structure-schematic.png
+INPUT ./figures/structure-schematic.png
+INPUT ./figures/structure-schematic.png
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT figures/find-events.png
+INPUT ./figures/find-events.png
+INPUT ./figures/find-events.png
 INPUT thesis.bbl
 INPUT thesis.bbl
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm

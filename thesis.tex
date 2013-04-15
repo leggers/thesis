@@ -248,7 +248,19 @@ Thus we can necessarily know when a candidate for trapping enters the chamber.
 
 
 
-\subsection{Trapping Procedure}
+\subsection{Procedures}
+
+
+
+\subsubsection{Monodirectional Translocations}
+
+
+
+\subsubsection{Trapping}
+
+
+
+\subsubsection{``Ping-pong'' Translocations}
 
 
 
@@ -257,10 +269,11 @@ Thus we can necessarily know when a candidate for trapping enters the chamber.
 After collecting current vs. time data at a rate of 250kHz we ran it through our MatLab data analysis pipeline.
 Each data file contains one minute of data.
 Current, measured in nanoamps, can be positive or negative (depending on driving voltage) but only its absolute value is used in computations to simplify algorithms.
+All analysis pipelines start by importing data files (either in pure binary or axon binary file formats) to MatLab-manipulable tables.
 
 \subsubsection{Monodirectional Translocations}
 
-The data analysis pipeline for monodirectional translocations starts with data sanitation.
+The data analysis for monodirectional translocations starts with data sanitation.
 We run once through a given file recording where events start and end.
 Our heuristic for detecting translocations in monodirectional experiments is deviation from a baseline value \(\beta\) defined by the moving average of the previous 1ms of data (250 data points).
 We average the next 7 points, called the ``lookahead'' or ``EventTest'' \(\Lambda\) and see if it exceeds our threshold for an event.
@@ -296,12 +309,15 @@ The final step in event processing is calculating ECD, which is done by summing 
 The rest of the pipeline takes analyzed data and creates graphs (making it useful but uninteresting technically).
 
 
-\subsubsection{``Ping-Pong'' Translocations}
+\subsubsection{Ping-Pong Translocations}
 
-The data analysis pipeline for ``Ping-Pong'' experiments proceeds largely as above, but with more complicated event start and end detection.
+The data analysis pipeline for Ping-Pong experiments proceeds largely as above, but with more involved data sanitization and event detection.
 The added complication is due to the nastiness of the data [show a picture with whacked out baseline here].
+Before I wrote code to detect and analyze events all analysis was hand-done, using voltage flips triggered by translocations to find events.
+This analysis became increasingly arduous as noise increased, triggering false flips; flips were no longer a reliable indicator of a translocation and hours were wasted looking at empty baseline hunting for a single event.
+Problematic features include, but are not limited to: increased noise in the data sets 
 We tried multiple ways to fit the exponential-seeming decay of the data and subtract it to allow us to use the exact event detection method above but failed.
-We resorted to using a moving average of the derivative of sorts (explain in more detail) to detect events as well.
+%Instead we resorted t
 
 \section{Results and Discussion}
 

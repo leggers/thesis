@@ -236,7 +236,6 @@ Last, but not least, we create the nanopore in the final layer of silicon nitrid
 This novel structure is ideal for entropic trapping because it places the cavity that will trap the molecule directly adjacent to the molecular detector.
 Thus we can necessarily know when a candidate for trapping enters the chamber.
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=.45\textwidth]{figures/structure-schematic}
@@ -244,17 +243,50 @@ Thus we can necessarily know when a candidate for trapping enters the chamber.
 \label{fig:structure-schematic}
 \end{figure}
 
-\subsection{DNA Preparation and Apparatus Setup}
+\subsection{Apparatus and Setup}
 
+Nanopores are excellent single-biomolecule detectors.
+As such, we needed to take steps to ensure that the only biomolecules present in our experiments were DNA.
+To remove all foreign contaminants (things like skin cells, dust, possibly hair) we cleaned our nanopores in Nano-Strip (Cyantek  Corporation, 90\% sulfuric acid, 5\% peroxymonosulfuric acid, 5\% water) at 75$^\circ$C for 2.5 hours.
+Nano-Strip also made our pores hydrophilic which helped reduce noise in our data.
+Pores were then rinsed with deionized water and placed in a custom-made PVC chuck pictured in Fig.~\ref{fig:chuck}.
+We rinsed the setup by pushing degassed, deionized water and isopropyl alcohol through the fluid inlets.
+We then prepared to add DNA to the setup by filling reservoirs with a millipore-filtered, degassed buffer solution of 1M KCl, 10mM Tris-HCl and 1mM EDTA buffer with pH 8.0.
+We placed the chucks in Faraday cages, plugged in the electrodes, and turned on our data collection equipment.
+To establish a control baseline - typically around 15nA - we applied a 100mV voltage bias across the pore and began recording.
 
+To record data we used an Axon Axopatch 200B high-speed electrometer.
+The generic name for this type of equipment is a field-programmable gate array, or FPGA.
+FPGAs are designed to be customized after purchase to implement complex computations on-the-fly.
+They feature plentiful computation and fast-access memory resources to ensure computations and their requisite reactions are executed as quickly as possible.
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{figures/chuck}
+\caption{A schematic of translocation experiment setup. (Taken from Nick Hagerty's thesis.)}
+\label{fig:chuck}
+\end{figure}
 
 \subsection{Procedures}
 
-
+We added DNA to our setup by filling the reservoirs with the same buffered solution as above with the addition of linearlized $\lambda$-DNA (48.5kbp, New England Biolabs) diluted to a concentration of 500ng/ml.
+This setup generalizes well to multiple types of nanopore experiment; changing experiments requires only changing the code of the FPGA.
+I impacted three different experiments by my work: monodirectional translocation experiments, ``ping-pong'' (bidirectional) translocation experiments and trapping experiments.
 
 \subsubsection{Monodirectional Translocations}
 
+A typical monodirectional translocation experiment involves the application of a constant driving voltage for a predetermined experimental duration.
+We applied voltages ranging from 140mV to 60mV in 20mV steps biased in both directions for 10 minutes each.
+The exact order of tested voltages varied per-experiment but both polarities were run before moving to the next voltage.
+A typical minute of collected data is shown in Fig.~\ref{fig:trans-data}
 
+Translocation events look like top-hat-shaped deviations from the baseline, indicating a DNA molecule is in the pore, displacing ionic current.
+Current traces of translocations often feature multiple levels of displacement, indicating the presence of multiple strands of DNA.
+Typically multiple strands enter the pore because the DNA molecule is folded; rarely we see fluke events in which multiple DNA molecules translocate together.
+Rarer still are knots of DNA molecules that nearly completely block any current from flowing through the pore.
+Current can also be blocked by bubbles in solution lodging themselves in the nanopore.
+These two types of blockage create drastically different current signatures: bubbles yield a smooth, uninteresting baseline that is much smaller than expected whereas bundled DNA yields an incredibly noisey baseline also much smaller than a clog-free pore.
+To dislodge blockages we ``zap'' the system with large voltage spikes and flip the polarity several times in rapid succession.
 
 \subsubsection{Trapping}
 
@@ -280,6 +312,7 @@ We average the next 7 points, called the ``lookahead'' or ``EventTest'' \(\Lambd
 The last piece of data used to find event boundaries is the root mean square of the baseline \(\Omega = \beta_{RMS}\).
 The RMS provides a good measure of the amount of variability, also known as noise, in the baseline.
 Each of these values is calculated tens of thousands of times per file as it is traversed from start to end with a step size of \(1/50^{th}\) of a millisecond (5 data points). (dereK: should i break beta and lambda and omega into separated equations and define them that way?)
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=.8\textwidth]{figures/find-events}
@@ -290,10 +323,10 @@ Each of these values is calculated tens of thousands of times per file as it is 
 If the lookahead is far enough away from the baseline (``far enough'' \(\Delta\) being dependent on driving voltage and specified by the user, typically a quarter of a nanoamp at 100mV), we know we may have found an event \(\xi\):
 \begin{equation} |\beta_{start}| - |\Lambda| \geq \Delta \Rightarrow \xi = \top \label{eq:event-start}\end{equation}
 where \(\beta\) is baseline value, \(\Lambda\) is lookahead value, \(\Delta\) is the cutoff value, and \(\xi\) is a boolean value specifying whether we believe we are in an event.
-We save \(\beta_{start}\) to use when detecting the end of the event and continue taking the averages (\(\beta, \Lambda\)) and RMS measurements (\(\Omega\)) as stated above.
+We save \(\beta_{start}\) to use when detecting the end of the event and continue taking the averages \(\beta, \Lambda\) and RMS measurements \(\Omega\) as stated above.
 Instead of using a specified threshold as we did when detecting the start of an event, we determine the end of event by checking if the lookahead is greater than the saved baseline minus one tenth of the RMS (remember, all values are positive):
 \begin{equation}|\Lambda| \geq |\beta_{start}| - \frac{|\Omega|}{10}. \label{eq:event-end}\end{equation}
-The other way an event can ``end'' is by being longer than 20 milliseconds at which point we know that the event flag fired likely due to noise or a shifted baseline.
+The other way an event can ``end'' is by being longer than 20 milliseconds at which point we know that the event flag fired erroneously, likely due to noise or a shifted baseline.
 There are two possible extremes for an RMS value to take: the smallest is the noise during an event (which is identical to the noise on the baseline); the largest is if the baseline spans multiple current blockage levels.
 We correct for this possibly large disparity by using only one tenth of the RMS value.
 It ensures no false triggering if the RMS is large while retaining accuracy for small RMS values because the lookahead should return to the baseline after an event.
@@ -311,19 +344,50 @@ The rest of the pipeline takes analyzed data and creates graphs (making it usefu
 
 \subsubsection{Ping-Pong Translocations}
 
-The data analysis pipeline for Ping-Pong experiments proceeds largely as above, but with more involved data sanitization and event detection.
-The added complication is due to the nastiness of the data [show a picture with whacked out baseline here].
-Before I wrote code to detect and analyze events all analysis was hand-done, using voltage flips triggered by translocations to find events.
+The data analysis pipeline for ping-pong experiments proceeds largely as described above, but with more involved data sanitization and event detection.
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{figures/good-ping-pong}
+\caption{A chunk of ping-pong data used to build our analysis algorithms.
+Important features are the noisiness and translocations on moving baselines.}
+\label{fig:good-ping-pong}
+\end{figure}
+The added complication is due to the nastiness of the data for which Fig.~\ref{fig:good-ping-pong} is a good representation.
+Before we wrote code to detect and process events all analysis was hand-done, using voltage flips triggered by translocations to find events.
 This analysis became increasingly arduous as noise increased, triggering false flips; flips were no longer a reliable indicator of a translocation and hours were wasted looking at empty baseline hunting for a single event.
-Problematic features include, but are not limited to: increased noise in the data sets 
-We tried multiple ways to fit the exponential-seeming decay of the data and subtract it to allow us to use the exact event detection method above but failed.
-%Instead we resorted t
+Problematic features include, but are not limited to: increased noise in the data sets and translocations on moving baselines.
+
+Moving baselines posed a huge problem because our only working automatic detection scheme relied upon a flat baseline and deviation from an average current value to detect an event.
+This trigger was always firing because current was always moving, necessitating a brand new detection scheme.
+Our first thought was to fit the exponential-seeming decay of the data and subtract it to allow us to use the same event detection method as for monodirectional translocations.
+Fitting seemed ideal as it would best preserve ECD measurements, which was the end goal of that experiment: (to show that ECD is conserved, right?)
+None of MatLab's fit functions worked when fed our data; either they over-fit and removed the event or they did not return a function at all.
+We hypothesized that the sheer number of data points overwhelmed the fitting toolbox, so we tried sampling the data by averaging over various numbers of milliseconds.
+Fitting still did not work.
+Multiple problems arose while sampling, the greatest of which was that we would sample points within the event, pulling the fit function (if one was returned) into the event, destroying ECD measurements.
+So we began fiddling with other possible heuristics for identifying events.
+
+We eventually arrived at a robust heuristic to add to our detection arsenal by visual inspection of the data: use changes in the slope of the moving baseline.
+Because the absolute value of slope is always decreasing on moving baselines, we used an increase in slope as our final test for event boundaries.
+To find events, we first locate ``zaps'' in the data: places where the voltage flipped, causing a capacitive discharge that overloaded our recording equipment.
+We run once through the data file, recording locations of all zaps.
+We then search forward from the zap positions when searching for beginnings of events.
+An event must pass a multi-step detection procedure to be classified as such.
+First, we use our tried-and-true deviation from baseline current as a first flag.
+However, we greatly reduce the number of data points used to define baseline current to 20 from 250 in the monodirectional case.
+If lookahead current deviates far enough (defined on a per-dataset basis, typically around .15nA) from the baseline, we calculate a baseline slope value by finding the inter-data-point slopes (that is, the difference in current between adjacent data points) and averaging them.
+We do the same for the lookahead data points.
+If the lookahead average is greater than baseline average by .05nA/point (an arbitrary cutoff determined by lots of fiddling) we know we have found the beginning of an event.
+Detection of event ends proceeds largely the same way except it looks backward from the next recorded zap. 
+
+Noise was an issue because it would falsely trigger an event flag, causing junk to be processed, inducing human labor to manually clean data sets. 
 
 \section{Results and Discussion}
 
 
 
 \section{Conclusion}
+
 
 
 % If in two-column mode, this environment will change to single-column

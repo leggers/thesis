@@ -114,10 +114,17 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7
 INPUT figures/structure-schematic.png
 INPUT ./figures/structure-schematic.png
 INPUT ./figures/structure-schematic.png
+INPUT figures/chuck.png
+INPUT ./figures/chuck.png
+INPUT ./figures/chuck.png
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT figures/find-events.png
 INPUT ./figures/find-events.png
 INPUT ./figures/find-events.png
+INPUT figures/good-ping-pong.jpg
+INPUT ./figures/good-ping-pong.jpg
+INPUT ./figures/good-ping-pong.jpg
 INPUT thesis.bbl
 INPUT thesis.bbl
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm

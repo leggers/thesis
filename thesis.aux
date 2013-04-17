@@ -6,49 +6,59 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event. The structure has 3 main layers. From bottom to top they are the nanopore, the cavity, and a large hole with diameter 500nm on average.}}{3}{}}
 \newlabel{fig:nanopore-schematic}{{1}{3}{}{}{}}
 \citation{trapping}
-\citation{exponent}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces An idealized lab-on-a-chip in which an entropic trap would effectively be a nanoscale test tube. We should be able to trap a DNA molecule by turning off voltage at the proper time (1), perform some biochemistry on it (such as segmenting it using a restriction enzyme) (2), and test whether our chemistry proceeded as planned by using the detection properties of the nanopore (3).}}{4}{}}
+\newlabel{fig:trapped-and-snipped}{{2}{4}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}Theory}{4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Quantifying DNA as a Polymer}{4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {}Trapping in More Detail}{5}{}}
-\newlabel{eq:constant-current}{{1}{5}{}{}{}}
-\citation{mobility}
-\citation{CRC}
+\citation{exponent}
+\@writefile{toc}{\contentsline {subsection}{\numberline {}Trapping in More Detail}{6}{}}
+\newlabel{eq:constant-current}{{1}{6}{}{}{}}
 \newlabel{eq:electric-field}{{2}{6}{}{}{}}
 \newlabel{eq:velocity}{{3}{6}{}{}{}}
-\newlabel{eq:competition}{{4}{6}{}{}{}}
+\citation{mobility}
+\citation{CRC}
 \citation{nanopore-fabrication}
+\newlabel{eq:competition}{{4}{7}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}Experiment}{7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Synthesis of Nanopores}{7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A more specific schematic of our structure including methods of feature creation. Note: Not to scale.}}{8}{}}
-\newlabel{fig:structure-schematic}{{2}{8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A more specific schematic of our structure including methods of feature creation. Note: Not to scale.}}{8}{}}
+\newlabel{fig:structure-schematic}{{3}{8}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Apparatus and Setup}{8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A schematic of translocation experiment setup. (Taken from Nick Hagerty's thesis.)}}{9}{}}
-\newlabel{fig:chuck}{{3}{9}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A schematic of translocation experiment setup. (Taken from Nick Hagerty's thesis.)}}{9}{}}
+\newlabel{fig:chuck}{{4}{9}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Procedures}{9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Trapping}{10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {}``Ping-pong'' Translocations}{10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {}Data Analysis with MatLab}{10}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A representation of how our MatLab script finds events in monodirectional data. Important features of the data are its relatively static baseline and event structure. The data pictured has been run through a 50kHz software filter for legibility; typical data is much noisier.}}{11}{}}
-\newlabel{fig:find-events}{{4}{11}{}{}{}}
-\newlabel{eq:event-start}{{5}{11}{}{}{}}
-\newlabel{eq:event-end}{{6}{11}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Ping-Pong Translocations}{12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A chunk of ping-pong data used to build our analysis algorithms. Important features are the noisiness and translocations on moving baselines.}}{13}{}}
-\newlabel{fig:good-ping-pong}{{5}{13}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A typical minute of monodirectional translocation data. Notice the current scale, noise and brevity of translocation events.}}{10}{}}
+\newlabel{fig:trans-data}{{5}{10}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A schematic of how the stacked-top-hat shape of current vs time data depends on how DNA enters the nanopore. Missing are schematics of multiply-folded molecules but the linear relationship between current blockage and strands in the pore is made clear. Almost every thin spike in 5{}{}{}\hbox {} is of one of these forms. (Taken from Nick Hagerty's thesis.)}}{11}{}}
+\newlabel{fig:dna-approach}{{6}{11}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Trapping}{11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {}``Ping-pong'' Translocations}{12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {}Data Analysis with MatLab}{12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A representation of how our MatLab script finds events in monodirectional data. Important features of the data are its relatively static baseline and event structure. The data pictured has been run through a 50kHz software filter for legibility; typical data is much noisier.}}{13}{}}
+\newlabel{fig:find-events}{{7}{13}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{13}{}}
+\newlabel{eq:event-start}{{5}{14}{}{}{}}
+\newlabel{eq:event-end}{{6}{14}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The histogram presented to the user to determine single-stranded current blockage. The effect of the asymmetry of our structure is reflected in the differing current blockage values when translocations start from one side or the other. The first two peaks are well-defined because many events have at least some portion where the molecule is folded once. Higher numbers of folds are observed more rarely so the farther peaks are more poorly defined.}}{15}{}}
+\newlabel{fig:blockage-histogram}{{8}{15}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A chunk of ping-pong data used to build our analysis algorithms. Important features are the data's noisiness and translocations on moving baselines.}}{16}{}}
+\newlabel{fig:good-ping-pong}{{9}{16}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Ping-Pong Translocations}{16}{}}
 \bibdata{bibliogrpahy}
 \bibcite{dna-hard-drive}{{1}{2013}{{dna}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A particularly hard event to properly detect. The folded-ness of translocation and location on decaying baseline proved particularly tough to interpret.}}{18}{}}
+\newlabel{fig:tough-event}{{10}{18}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Results and Discussion}{18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Conclusion}{18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Acknowledgments}{18}{}}
 \bibcite{trapping}{{2}{2009}{{JT~Del Bonis-O'Donnell and Stein}}{{}}}
 \bibcite{exponent}{{3}{2008}{{Fancesco~Valle and Deitler}}{{}}}
 \bibcite{mobility}{{4}{1997}{{Stellwagen~NC}}{{}}}
 \bibcite{CRC}{{5}{2012-2013}{{Haynes}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {}Results and Discussion}{14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}Conclusion}{14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}Acknowledgments}{14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{14}{}}
 \bibcite{nanopore-fabrication}{{6}{2009}{{Meng-Yue~Wu and Zandbergen}}{{}}}
 \global \chardef \firstnote@num6\relax 
 \bibstyle{apsrev}
-\newlabel{LastBibItem}{{6}{15}{}{}{}}
-\newlabel{LastPage}{{}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{19}{}}
+\newlabel{LastBibItem}{{6}{19}{}{}{}}
+\newlabel{LastPage}{{}{19}}

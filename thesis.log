@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  16 APR 2013 12:57
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  16 APR 2013 22:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -208,10 +208,18 @@ Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
 Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
 \c@vrcnt=\count110
 ))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count111
+\float@exts=\toks22
+\float@box=\box36
+\@float@everytoks=\toks23
+\@floatcapt=\box37
+)
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks22
-\inpenc@posthook=\toks23
+\inpenc@prehook=\toks24
+\inpenc@posthook=\toks25
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -427,34 +435,34 @@ Now handling font encoding U ...
 )) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-Class revtex4 Info: Patching LaTeX tabular. on input line 38.
-Class revtex4 Info: cite was not loaded (OK!) on input line 38.
-Class revtex4 Info: multicol was not loaded (OK!) on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+Class revtex4 Info: Patching LaTeX tabular. on input line 39.
+Class revtex4 Info: cite was not loaded (OK!) on input line 39.
+Class revtex4 Info: multicol was not loaded (OK!) on input line 39.
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
+\scratchcounter=\count112
 \scratchdimen=\dimen122
-\scratchbox=\box36
-\nofMPsegments=\count112
-\nofMParguments=\count113
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count114
+\scratchbox=\box38
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count115
 \MPscratchDim=\dimen123
-\MPnumerator=\count115
-\makeMPintoPDFobject=\count116
-\everyMPtoPDFconversion=\toks25
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks27
 ) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -508,62 +516,101 @@ e
 File: figures/nanopore-schematic.png Graphic file (type png)
 
 <use figures/nanopore-schematic.png>
-Package pdftex.def Info: figures/nanopore-schematic.png used on input line 115.
+Package pdftex.def Info: figures/nanopore-schematic.png used on input line 116.
 
 (pdftex.def)             Requested size: 187.19714pt x 168.74368pt.
- [2] [3 <./figures/nanopore-schematic.png>] [4] [5] [6] [7]
-<figures/structure-schematic.png, id=39, 503.481pt x 385.44pt>
+ [2] [3 <./figures/nanopore-schematic.png>] <figures/idealized-trapping.png, id
+=18, 922.647pt x 561.7788pt>
+File: figures/idealized-trapping.png Graphic file (type png)
+
+<use figures/idealized-trapping.png>
+Package pdftex.def Info: figures/idealized-trapping.png used on input line 143.
+
+(pdftex.def)             Requested size: 468.0pt x 284.96042pt.
+ [4 <./figures/idealized-trapping.png>]
+[5] [6] [7] <figures/structure-schematic.png, id=42, 503.481pt x 385.44pt>
 File: figures/structure-schematic.png Graphic file (type png)
 
 <use figures/structure-schematic.png>
-Package pdftex.def Info: figures/structure-schematic.png used on input line 241
+Package pdftex.def Info: figures/structure-schematic.png used on input line 246
 .
 (pdftex.def)             Requested size: 210.59857pt x 161.22498pt.
  [8 <./figures/structure-schematic.png>]
-<figures/chuck.png, id=45, 746.79pt x 422.57875pt>
+<figures/chuck.png, id=47, 746.79pt x 422.57875pt>
 File: figures/chuck.png Graphic file (type png)
  <use figures/chuck.png>
-Package pdftex.def Info: figures/chuck.png used on input line 265.
+Package pdftex.def Info: figures/chuck.png used on input line 271.
 (pdftex.def)             Requested size: 280.80286pt x 158.89221pt.
 
+[9 <./figures/chuck.png>]
+<figures/monodirectional-minute.png, id=51, 1264.725pt x 767.86874pt>
+File: figures/monodirectional-minute.png Graphic file (type png)
 
-LaTeX Warning: Reference `fig:trans-data' on page 9 undefined on input line 281
-.
+<use figures/monodirectional-minute.png>
+Package pdftex.def Info: figures/monodirectional-minute.png used on input line 
+290.
+(pdftex.def)             Requested size: 468.0pt x 284.14214pt.
 
-[9 <./figures/chuck.png>] [10]
-<figures/find-events.png, id=53, 630.1944pt x 291.0072pt>
+<figures/dna-approach.png, id=52, 795.97375pt x 273.02pt>
+File: figures/dna-approach.png Graphic file (type png)
+
+<use figures/dna-approach.png>
+Package pdftex.def Info: figures/dna-approach.png used on input line 297.
+(pdftex.def)             Requested size: 468.0pt x 160.52216pt.
+ [10 <./figures/monodirectional-minute.png>]
+[11 <./figures/dna-approach.png>]
+
+LaTeX Warning: Reference `fig:ping-pong-data' on page 12 undefined on input lin
+e 333.
+
+[12] <figures/find-events.png, id=63, 630.1944pt x 291.0072pt>
 File: figures/find-events.png Graphic file (type png)
 
 <use figures/find-events.png>
-Package pdftex.def Info: figures/find-events.png used on input line 318.
-(pdftex.def)             Requested size: 374.40143pt x 172.88722pt.
- [11 <./figures/find-events.png>]
-<figures/good-ping-pong.jpg, id=58, 963.6pt x 558.58687pt>
+Package pdftex.def Info: figures/find-events.png used on input line 356.
+(pdftex.def)             Requested size: 468.0pt x 216.11014pt.
+ [13 <./figures/find-events.png>]
+<figures/blockage-histogram.png, id=69, 456.2646pt x 373.395pt>
+File: figures/blockage-histogram.png Graphic file (type png)
+
+<use figures/blockage-histogram.png>
+Package pdftex.def Info: figures/blockage-histogram.png used on input line 377.
+
+(pdftex.def)             Requested size: 374.40143pt x 306.40808pt.
+ [14]
+<figures/good-ping-pong.jpg, id=73, 963.6pt x 558.58687pt>
 File: figures/good-ping-pong.jpg Graphic file (type jpg)
 
 <use figures/good-ping-pong.jpg>
-Package pdftex.def Info: figures/good-ping-pong.jpg used on input line 350.
+Package pdftex.def Info: figures/good-ping-pong.jpg used on input line 397.
 (pdftex.def)             Requested size: 468.0pt x 271.28934pt.
- [12] [13 <./figures/good-ping-pong.jpg>]
-(./thesis.bbl
+ [15 <./figures/blockage-histogram.png>]
+[16 <./figures/good-ping-pong.jpg>]
+<figures/tough-event.jpg, id=81, 963.6pt x 558.58687pt>
+File: figures/tough-event.jpg Graphic file (type jpg)
+
+<use figures/tough-event.jpg>
+Package pdftex.def Info: figures/tough-event.jpg used on input line 440.
+(pdftex.def)             Requested size: 468.0pt x 271.28934pt.
+ [17] (./thesis.bbl
 Underfull \hbox (badness 2556) in paragraph at lines 16--18
 []\OT1/cmr/m/it/10.95 Double he-lix serves dou-ble duty \OT1/cmr/m/n/10.95 (201
 3), URL $\OT1/cmtt/m/n/10.95 http : / / www . nytimes . com / 2013 / 01 / 29 /
  []
 
-[14]) [15] (./thesis.aux)
+[18 <./figures/tough-event.jpg>]) [19] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4751 strings out of 493488
- 64204 string characters out of 3141326
- 138156 words of memory out of 3000000
- 7989 multiletter control sequences out of 15000+200000
+ 4840 strings out of 493488
+ 65852 string characters out of 3141326
+ 140608 words of memory out of 3000000
+ 8069 multiletter control sequences out of 15000+200000
  10271 words of font info for 37 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,13n,23p,643b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,13n,23p,635b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -579,10 +626,10 @@ ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2
 012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (15 pages, 824960 bytes).
+Output written on thesis.pdf (19 pages, 1153574 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

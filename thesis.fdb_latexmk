@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex thesis"] 1366131454 "thesis.aux" "thesis.bbl" "thesis" 1366131457
+["bibtex thesis"] 1366164518 "thesis.aux" "thesis.bbl" "thesis" 1366164522
   "/usr/local/texlive/2012/texmf-dist/bibtex/bst/revtex4/apsrev.bst" 1261594643 44155 dc7233506a001aedcd59cfd90f9fe8d7 ""
   "bibliogrpahy.bib" 1365964144 3234 569ae6898292a3e857c52a43a6dadfe0 ""
-  "thesis.aux" 1366131456 3924 66f83458e60f586aa552f2eb6e7561d7 ""
+  "thesis.aux" 1366164521 6018 9be8a7b289d17b3b85f3e1278a99a716 ""
   "thesis.bcf" 0 -1 0 ""
   (generated)
   "thesis.blg"
   "thesis.bbl"
-["pdflatex"] 1366131455 "thesis.tex" "thesis.pdf" "thesis" 1366131457
+["pdflatex"] 1366164519 "thesis.tex" "thesis.pdf" "thesis" 1366164522
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -63,6 +63,7 @@
   "/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1enc.dfu" 1254151887 7480 2a6bcf9edfeb9ff088a3f0cf7f1a196c ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/base/utf8.def" 1254151887 6350 d390538f995713c986118b8607d58f49 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/fancyref/fancyref.sty" 1137110135 15867 e4631c47082a62a23a73681066848c33 ""
+  "/usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty" 1254151804 14183 42a8fc761b806986eef292369afc2988 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty" 1156702488 7882 3bd78469d444e8d494e27cfd7ca92719 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty" 1156702488 2266 7054435e4584a41cf53b0a7ca624d0cb ""
@@ -87,14 +88,19 @@
   "/usr/local/texlive/2012/texmf-var/web2c/pdftex/pdflatex.fmt" 1341108725 3691572 80746d7cec090b0770bc87079bef471d ""
   "/usr/local/texlive/2012/texmf.cnf" 1341108668 572 7ea7194897937febeb63145e1c3a1f03 ""
   "/usr/local/texlive/2012/texmf/web2c/texmf.cnf" 1336865692 31299 729e216d9b945005c0d4b079c0500bc9 ""
+  "figures/blockage-histogram.png" 1366134468 16238 5e43741ea60a26958e6113788f3b8a31 ""
   "figures/chuck.png" 1366095410 42534 29503663ade5837d472b2ec2e6085e66 ""
+  "figures/dna-approach.png" 1366149824 28738 dd4bd284f7b420eb49c49c18a65c02ec ""
   "figures/find-events.png" 1365970989 159288 2eb8fd5da10fc306ceea6eb466c2aa18 ""
   "figures/good-ping-pong.jpg" 1366062244 98291 7ee24bf6e283084eb04c80ea1abc033f ""
+  "figures/idealized-trapping.png" 1366134790 100929 a140c7f1a89ce74b0a764a8fa9a518fd ""
+  "figures/monodirectional-minute.png" 1366134080 161641 9d3c83185a4d60cdb43fe4b9633b892e ""
   "figures/nanopore-schematic.png" 1364830437 278970 ba85b28a7b9dc88a60512767be9a0fff ""
   "figures/structure-schematic.png" 1365963427 80151 0dd107af49fe71a5926cd29724655d0a ""
-  "thesis.aux" 1366131456 3924 66f83458e60f586aa552f2eb6e7561d7 ""
-  "thesis.bbl" 1366131455 2586 b52b0b8b4aecae0c7b0523a18095ea00 "bibtex thesis"
-  "thesis.tex" 1366131448 33419 99716c2cccb74aa78abb6cc1e38478c5 ""
+  "figures/tough-event.jpg" 1366062318 95312 3e60476c5c1a3b754ea2f92556fce067 ""
+  "thesis.aux" 1366164521 6018 9be8a7b289d17b3b85f3e1278a99a716 ""
+  "thesis.bbl" 1366164519 2586 b52b0b8b4aecae0c7b0523a18095ea00 "bibtex thesis"
+  "thesis.tex" 1366164506 38950 d9280f0625edcd318d57c4d896ce9b63 ""
   (generated)
   "thesis.log"
   "thesis.pdf"

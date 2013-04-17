@@ -142,6 +142,9 @@ INPUT ./figures/good-ping-pong.jpg
 INPUT figures/tough-event.jpg
 INPUT ./figures/tough-event.jpg
 INPUT ./figures/tough-event.jpg
+INPUT figures/false-positive-example.png
+INPUT ./figures/false-positive-example.png
+INPUT ./figures/false-positive-example.png
 INPUT thesis.bbl
 INPUT thesis.bbl
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm

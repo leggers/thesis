@@ -228,6 +228,7 @@ We now understand why and are seeking to fabricate devices with longer chambers 
 
 \subsection{Synthesis of Nanopores}
 
+[where do i put the fact that i worked with karri? in attributions at the end or what?]
 We fabricated our nanopore-plus-cavity structures to entropically trap DNA molecules using methods similar to Zandbergen et al.\cite{nanopore-fabrication}
 We start with large wafers with the layers seen in Fig.~\ref{fig:structure-schematic} manufactured by the Cornell Nanofabrication Facility.
 We first use two types of etching to burn through the top two layers of the wafer to gain access to layers in which we make more interesting structures.
@@ -288,7 +289,8 @@ A typical minute of collected data is shown in Fig.~\ref{fig:trans-data}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figures/monodirectional-minute}
-\caption{A typical minute of monodirectional translocation data. Notice the current scale, noise and brevity of translocation events.}
+\caption{A typical minute of monodirectional translocation data.
+Notice the current scale, noise, slightly unstable baseline and brevity of translocation events.}
 \label{fig:trans-data}
 \end{figure}
 
@@ -428,6 +430,7 @@ If the lookahead average is greater than baseline average by .05nA/point (an arb
 Detection of event ends proceeds largely the same way except it looks backward from the next recorded zap. 
 
 Noise was an issue because it would falsely trigger an event flag, causing junk to be processed, inducing human labor to manually clean data sets. 
+[talk to mirna to fill in]
 
 \section{Results and Discussion}
 
@@ -445,6 +448,23 @@ The folded-ness of translocation and location on decaying baseline proved partic
 Most events are on less extreme slopes of baseline and do not have such unusual event structures.
 Events like these forced me to reconsider my approach to event end detection multiple times
 Adding that calculation to the FPGA's machine code will drastically reduce the number of voltage flips due to non-events.
+
+One problem that still plagues monodirectional translocation analyses are ``spikes,'' small, unexplainable peaks that get flagged as events if the threshold is set low enough.
+An example can be seen in \ref{fig:spike}.
+Such false positives arise because the threshold for an event is set low enough that they get flagged.
+Ultimately, the user decides this threshold and it is obvious that setting the threshold too low and getting false positives is better than setting it too high and missing events.
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{figures/false-positive-example}
+\caption{A small current spike that typically gets falsely flagged as an event.
+The peak is approximately .11nA from the baseline, which is a reasonable cutoff for events.}
+\label{fig:spike}
+\end{figure}
+The best and most straightforward way to avoid flagging spikes as events is to set a lower bound on event length.
+We decided not to do so because that type of analysis treads dangerously close to falsely biasing our data.
+Another method to combat such false positives is to offer some sort of suggested cutoff based on an analysis of the file.
+The major problem with such an analysis is that very few things are constant over even a minute of data; the baseline can shift by a nanoamp or more, 
+
 
 \section{Conclusion}
 

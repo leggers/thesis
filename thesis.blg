@@ -5,7 +5,7 @@ The style file: apsrev.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliogrpahy.bib
 Warning--entry type for "dna-hard-drive" isn't style-file defined
---line 108 of file bibliogrpahy.bib
+--line 117 of file bibliogrpahy.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Name 1 in "Fancesco Valle, Melanie Favre, Paolo De Los Rios, Angelo Rosa, and Giovanni Deitler" has a comma at the end for entry exponent
 while executing---line 2283 of file apsrev.bst
@@ -88,45 +88,45 @@ Too many commas in name 1 of "Meng-Yue Wu, Ralph M. M. Smeets, Mathijs Zandberge
 while executing---line 2372 of file apsrev.bst
 Too many commas in name 1 of "Meng-Yue Wu, Ralph M. M. Smeets, Mathijs Zandbergen, Ulrike Ziese, Diego Krapf, Philip E. Batson, Nynke H. Dekker, Cees Dekker, and Henny W. Zandbergen" for entry nanopore-fabrication
 while executing---line 2372 of file apsrev.bst
-You've used 6 entries,
+You've used 8 entries,
             3411 wiz_defined-function locations,
-            1193 strings with 11037 characters,
-and the built_in function-call counts, 3184 in all, are:
-= -- 203
-> -- 69
-< -- 16
-+ -- 48
-- -- 16
-* -- 396
-:= -- 373
-add.period$ -- 6
-call.type$ -- 6
-change.case$ -- 27
-chr.to.int$ -- 15
-cite$ -- 8
-duplicate$ -- 301
-empty$ -- 289
-format.name$ -- 49
-if$ -- 607
+            1206 strings with 11271 characters,
+and the built_in function-call counts, 4141 in all, are:
+= -- 260
+> -- 83
+< -- 20
++ -- 58
+- -- 20
+* -- 509
+:= -- 493
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 35
+chr.to.int$ -- 17
+cite$ -- 10
+duplicate$ -- 393
+empty$ -- 386
+format.name$ -- 59
+if$ -- 792
 int.to.chr$ -- 1
-int.to.str$ -- 7
-missing$ -- 42
-newline$ -- 33
-num.names$ -- 16
-pop$ -- 83
+int.to.str$ -- 9
+missing$ -- 58
+newline$ -- 39
+num.names$ -- 22
+pop$ -- 109
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 32
 quote$ -- 0
-skip$ -- 116
+skip$ -- 153
 stack$ -- 0
-substring$ -- 97
-swap$ -- 205
-text.length$ -- 8
+substring$ -- 134
+swap$ -- 265
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 34
+type$ -- 44
 warning$ -- 0
-while$ -- 13
+while$ -- 18
 width$ -- 0
-write$ -- 75
+write$ -- 95
 (There were 40 error messages)

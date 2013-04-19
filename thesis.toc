@@ -1,0 +1,22 @@
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{2}{}
+\tocdepth@restore 
+\contentsline {section}{\numberline {}Introduction}{3}{}
+\contentsline {subsection}{\numberline {}Attributions}{6}{}
+\contentsline {section}{\numberline {}Theory}{7}{}
+\contentsline {subsection}{\numberline {}Statistical Properties of DNA Polymers}{7}{}
+\contentsline {subsection}{\numberline {}Trapping in More Detail}{9}{}
+\contentsline {section}{\numberline {}Experiment}{10}{}
+\contentsline {subsection}{\numberline {}Synthesis of Nanopores}{10}{}
+\contentsline {subsection}{\numberline {}Apparatus and Setup}{11}{}
+\contentsline {subsection}{\numberline {}Procedures}{12}{}
+\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{13}{}
+\contentsline {subsubsection}{\numberline {}Trapping}{14}{}
+\contentsline {subsubsection}{\numberline {}``Ping-pong'' Translocations}{15}{}
+\contentsline {subsection}{\numberline {}Data Analysis with MatLab}{17}{}
+\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{17}{}
+\contentsline {subsubsection}{\numberline {}Ping-Pong Translocations}{21}{}
+\contentsline {section}{\numberline {}Results and Discussion}{23}{}
+\contentsline {section}{\numberline {}Conclusion}{27}{}
+\contentsline {section}{\numberline {}Acknowledgments}{27}{}
+\contentsline {section}{\numberline {}References}{27}{}

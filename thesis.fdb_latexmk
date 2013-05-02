@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex thesis"] 1366395582 "thesis.aux" "thesis.bbl" "thesis" 1366395587
+["bibtex thesis"] 1367525378 "thesis.aux" "thesis.bbl" "thesis" 1367525383
   "/usr/local/texlive/2012/texmf-dist/bibtex/bst/revtex4/apsrev.bst" 1261594643 44155 dc7233506a001aedcd59cfd90f9fe8d7 ""
   "bibliogrpahy.bib" 1366299535 3446 cd779437345aa4e419f8f91b85023ab3 ""
-  "thesis.aux" 1366395586 8521 79b134ab7251f207c450eaf69f6dfa47 ""
+  "thesis.aux" 1367525382 8760 182817e5f4f641d1fbd0652a648cc41b ""
   "thesis.bcf" 0 -1 0 ""
   (generated)
   "thesis.blg"
   "thesis.bbl"
-["pdflatex"] 1366395582 "thesis.tex" "thesis.pdf" "thesis" 1366395587
+["pdflatex"] 1367525378 "thesis.tex" "thesis.pdf" "thesis" 1367525383
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -104,10 +104,11 @@
   "figures/ping-pong-minute.png" 1366295630 140507 cd0a5675957d8e5f256847430583e9e4 ""
   "figures/structure-schematic.png" 1365963427 80151 0dd107af49fe71a5926cd29724655d0a ""
   "figures/tough-event.jpg" 1366062318 95312 3e60476c5c1a3b754ea2f92556fce067 ""
-  "thesis.aux" 1366395586 8521 79b134ab7251f207c450eaf69f6dfa47 ""
-  "thesis.bbl" 1366395582 3130 71d07368720e3e3de95c1687b1749060 "bibtex thesis"
-  "thesis.tex" 1366395577 49315 5ad00ffdfac6fd45a7ca615bce3de3fd ""
-  "thesis.toc" 1366395586 1363 1e06eefd155fd9fd5cc15e4155f2e988 ""
+  "figures/trapping-minute.png" 1367450950 118691 9a266164bf915c82fb600ba744cd72f9 ""
+  "thesis.aux" 1367525382 8760 182817e5f4f641d1fbd0652a648cc41b ""
+  "thesis.bbl" 1367525378 3130 71d07368720e3e3de95c1687b1749060 "bibtex thesis"
+  "thesis.tex" 1367525374 50768 dca685077dbc12e311d8f9e8eb4844bb ""
+  "thesis.toc" 1367525382 1363 90090804f1ad2255eb86bc13675a0c94 ""
   (generated)
   "thesis.log"
   "thesis.toc"

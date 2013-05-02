@@ -46,7 +46,7 @@
 %\preprint{}
 
 %Title of paper
-\title{Towards Entropic Trapping of DNA in Solid-State Nanopores}
+\title{Toward Entropic Trapping of DNA near Solid-State Nanopores}
 
 % repeat the \author .. \affiliation  etc. as needed
 % \email, \thanks, \homepage, \altaffiliation all apply to the current
@@ -75,7 +75,12 @@
 \date{\today}
 
 \begin{abstract}
-% insert abstract here
+In this study we investigated the viability of entropically trapping DNA near solid-state nanopores.
+We used modified nanopore structures in which we etched 400nm tall cavities adjacent to the nanopores in the same silicon wafer.
+Our preliminary attempts to entropically trap molecules failed due to flawed methodology and too-short cavities.
+To better understand trapping, we performed a theoretical calculation of minimum cavity height which yielded approximately 450nm.
+We also advanced other nanopore experiments (more specifically, experiments involving asymmetrical pore translocations and molecular ``ping-pong'') by writing data analysis code in MatLab.
+The analysis code for ping-pong experiments required developing a new heuristic for translocation detection which will prove useful in writing data analysis code for trapping and FPGA code to improve ping-pong experiments.
 \end{abstract}
 
 % insert suggested PACS numbers in braces on next line
@@ -134,7 +139,7 @@ If we could get DNA in a cavity that is roughly the size of the radius of gyrati
 \caption{(a) A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event.
 The structure has 3 main layers.
 From bottom to top they are the nanopore, the cavity, and a tunnel with diameter 500nm on average.
-(b) A photograph taken through a microscope of one of our pores.
+(b) A photo taken with an electron microscope of one of our pores.
 The layers are so thin that they are not completely opaque.}
 \label{fig:nanopore-schematic}
 \end{figure}
@@ -148,7 +153,7 @@ As it is driven, Brownian motion causes the molecule to start to equilibrate and
 However, translocation happens much faster than equilibration, so the molecule remains ``skinny'' when compared to the tunnel; continuing to push it will cause it to exit the structure.
 Thus, the probability of exit is dependent on the cavity length and hole diameter.
 When the molecule finishes translocating the current will return to its original baseline value.
-If the cavity is large enough turning off the driving voltage at the right moment will allow the molecule to equilibrate inside the cavity, trapping it.
+If the cavity is large enough, turning off the driving voltage at the right moment will allow the molecule to equilibrate inside the cavity, trapping it.
 
 Placing such a structure between two reservoirs of ionic solution yields the translocation dynamics described above with a twist: the structure’s asymmetry means translocations from either side of the pore are not equivalent.
 Although the effects of the asymmetric structure on translocation dynamics will be touched on, Karri DiPetrillo's thesis takes a deeper look at those phenomena.
@@ -166,8 +171,8 @@ In addition to creating more intricate labs-on-a-chip as in Fig.~\ref{fig:trappe
 
 \subsection{Attributions}
 Because Karri DiPetrillo and I were working on different uses of the same experimental setup, our work overlapped.
-I focused on writing code to expedite data analysis and figure making in addition to performing some preliminary experiments.
-Karri primarily conducted nanopore translocation experiments in addition to offering different ways to approach the data in a sane manner.
+We started by working together toward the common goal of entropic trapping of DNA but diverged when preliminary experiments failed.
+Karri worked toward understanding our pores' geometry's effects on translocation dynamics; I focused on making sense of the data produced by experiments in our lab and better understanding why trapping did not occur.
 Due to the connectedness of our work we collaborated on the Background and Experiments sections to determine the best information to include.
 However, our words are our own.
 % Put \label in argument of \section for cross-referencing
@@ -194,7 +199,7 @@ The Flory model modifies the random walk by using a mean field approach (where s
 The Flory model predicts that, for self-avoiding DNA, \(\nu_F = \frac{3}{5}\).
 Simulations and experiments yield an exponent of approximately .588.\cite{exponent}
 Numerical values for \(\lambda\)-DNA are summarized in Table \ref{tab:dna-table}.
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \begin{tabular}{ | c | c | c | c | }
 \hline
@@ -215,11 +220,11 @@ Zimm added the missing hydrodynamic interactions between different parts of the 
 The Zimm model's predictions most exactly agree with diffusion relaxation experiments.
 The Zimm model predicts that a polymer enters its equilibrium state from any other state within a characteristic relaxation time\cite{zimm-eqn}
 \begin{equation}\tau_z=\eta (\sqrt{N}l_0)^3/\sqrt{3\pi}k_BT \approx 170 \mathrm{ms}.\end{equation}
-where $\eta = 1$mPa$\cdot$s is viscosity, 
+where $\eta = 1$m$\cdot$Pa$\cdot$s is viscosity, 
 That is, if one stretched a DNA molecule to be completely straight, it would reach a spherical conformation in \(\tau_z\) seconds, maximum.
 The process of reaching such a sphere is known as relaxation.
 Our translocations last roughly 2 ms, so molecules do not have time to equilibrate until long after they translate.
-Thus our translocations are called ``fast translocations.'' To paint a physical picture of what that means, we imagine a randomly coiled rope being pulled off a table.
+Thus our translocations are considered fast translocations. To paint a physical picture of what that means, we imagine a randomly coiled rope being pulled off a table.
 As it is pulled, individual folds are sequentially straightened and pulled off the table.
 Only the most recently straightened fold (a small segment known as the moving length) is involved in the motion.
 The rest of the rope is stationary.
@@ -249,7 +254,7 @@ Combining these equations and solving for E yields:
 We know the velocity of the DNA molecule in an electric field: 
 \begin{equation} v_{\mathrm{DNA}} = \mu_{\mathrm{DNA}} E(R) \label{eq:velocity} \end{equation} 
 where \(\mu_{DNA}\) is the electrophoretic mobility of DNA.
-Combining in Eqs.~\ref{eq:electric-field} and \ref{eq:velocity} we find the velocity of a DNA molecule a distance $R$ from the pore:
+Combining Eqs.~\ref{eq:electric-field} and \ref{eq:velocity} we find the velocity of a DNA molecule a distance $R$ from the pore:
 \begin{equation} v_{\mathrm{DNA}} = \frac{\mathrm{d}R}{\mathrm{d}t} = \mu_{\mathrm{DNA}} \frac{I}{\sigma 2 \pi R^2}. \end{equation}
 Integrating yields the tip's distance from the pore and the elapsed time:
 \begin{equation}\int_{R=0}^{R(\Delta t)} \frac{\sigma 2 \pi R^2}{\mu_{\mathrm{DNA}} I} \mathrm{d}R = \int_{t=0}^{\Delta t} \mathrm{d}t \end{equation}
@@ -266,7 +271,7 @@ Now we will find a numerical value for cavity size.
 Plugging in numbers from our experiments, \(\mu_{DNA} = 3.75 \times 10^{-7}\)m$^2$/V$\cdot$s \cite{mobility} \(I = 2\times 10^{-8}\mathrm{A}, \Delta t = 2 \times 10^{-3}\)s and \(\sigma\) = 10 S/m\cite{CRC}, we see that the molecule travels \[R(\Delta t) = 895 \mathrm{nm} \] in the time it takes to translocate.
 Half of this (that is, 450nm) gives us a lower bound for cavity length.
 As an upper bound we can use the height of a fully relaxed DNA molecule, or $2\cdot R_g \approx 1.5 \mu m$.
-We now know that trapping is feasible and to conceptualize the problem as a race.
+We now know what trapping takes and to conceptualize the problem as a race.
 The next section will discuss how we probed the theory.
 
 \section{Experiment}
@@ -276,8 +281,7 @@ The next section will discuss how we probed the theory.
 We fabricated our nanopore-plus-cavity structures to entropically trap DNA molecules using methods similar to Zandbergen et al.\cite{nanopore-fabrication}
 We started with large wafers with the layers seen in Fig.~\ref{fig:structure-schematic} manufactured by the Cornell Nanofabrication Facility.
 The top layers of the wafer were present due to constraints of the manufacturing process and useless to us.
-We used two types of etching to burn through them to gain access to layers in which we made more interesting structures.
-We used thermal plasma etching to remove the top silicon nitride layer followed by potassium hydroxide base to remove the pure silicon.
+We used two types of etching to burn through them to gain access to layers in which we made more interesting structures: thermal plasma etching to remove the top silicon nitride layer followed by potassium hydroxide base to remove the pure silicon.
 We then used a Focused Ion Beam (FIB) to create holes in the 400nm middle layer of SiN with diameters ranging from 150 to 900 nanometers.
 This diameter is the constraining feature of the setup that entropically traps DNA and increases the moving length of the molecule in translocation experiments.
 The FIB hole allowed access to the silicon oxide layer which was etched using hydrofluoric acid, creating a chamber 1-2\(\mu\)m in diameter and 400nm tall in the our experiments.
@@ -303,15 +307,15 @@ Pores were then rinsed with deionized water and placed in a custom-made PVC chuc
 We rinsed the setup by pushing degassed, deionized water and isopropyl alcohol through the fluid inlets.
 We then prepared to add DNA to the setup by filling reservoirs with a millipore-filtered, degassed buffer solution of 1M KCl, 10mM Tris-HCl and 1mM EDTA buffer with pH 8.0.
 We placed the chucks in Faraday cages, plugged in the electrodes, and turned on our data collection equipment.
-To establish a control baseline - typically around 15nA - we applied a 100mV voltage bias across the pore and began recording.
+To establish a control baseline - typically 15nA - we applied a 100mV voltage bias across the pore and began recording.
 
 To record data we used an Axon Axopatch 200B high-speed electrometer which converts the analog signals received from the elctrodes into digital, numerical values.
 We sampled the analog signal at a rate of 250kHz.
 To control voltages we used a National Instruments SCB-68 field-programmable gate array (FPGA) card.
 FPGAs receive voltage inputs and send voltage outputs as functions of the inputs.
 FPGAs are designed to be customized with machine description code after purchase to implement complex computations (like our data analysis) on-the-fly to control experimental apparatuses.
-An FPGA could, for example, respond to a disturbance in current value indicative of a translocation and respond by changing the applied voltage.
-FPGAs feature plentiful computation and fast-access memory resources to ensure that computations and their requisite reactions are executed as quickly as possible.
+An FPGA could, for example, respond to a disturbance in current indicative of a translocation and respond by changing the applied voltage.
+FPGAs feature plentiful computation and fast memory resources to ensure that computations and their requisite reactions are executed as quickly as possible.
 
 \begin{figure}
 \centering
@@ -361,14 +365,23 @@ A typical minute of collected data is shown in Fig.~\ref{fig:trans-data}.
 
 \subsubsection{Trapping}
 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{figures/trapping-minute}
+\caption{A typical minute of trapping data.
+Notice the several events before and after the reversal of voltage polarity.}
+\label{fig:trapping-data}
+\end{figure}
+
 Our preliminary endeavors to trap DNA molecules yielded data which we later realized was inconclusive; we only could show that molecules were translocating, not staying in the chamber.
 The procedure followed that of monodirectional translocation experiments except that DNA was placed only on one side of the nanopore.
-A voltage (of varying value per experiment) was applied to push DNA across the pore for approximately 30 seconds.
+A voltage (of varying value per experiment) was applied to push DNA across the pore for approximately ten seconds.
 We flipped the polarity of the voltage to see if trapped molecules would reenter the pore.
 We then observed molecules translocating back across the pore!
 However, those translocations proved nothing except that it is possible for molecules to stay close enough to the pore to reenter after they have translocated; we had no way of knowing whether or not the molecules were actually trapped.
 An alternative procedure we tried was manually turning off the driving voltage when we observed a translocation.
 Every time trapping was attempted this way the pore was irrevocably clogged.
+A typical minute of trapping data is shown in Fig.~\ref{fig:trapping-data}
 
 \subsubsection{``Ping-pong'' Translocations}
 
@@ -389,7 +402,7 @@ The experiments began in the same way as monodirectional translocations but dive
 In molecular ping pong, the FPGA measures deviations from the baseline current.
 When a molecule is seen translocating as in Fig.~\ref{fig:one-event}, a timer, call it the flip timer, begins counting down from a predefined value between two and ten milliseconds.
 When the timer hits zero, the FPGA card flips the polarity of the voltage, hoping to recapture the most recently translocated molecule.
-Recapture here takes a drastically different meaning than one may expect: instead of having anything to do with trapping in the cavity, recapture refers to the return of a molecule that has recently completed a translocation through the pore.
+Recapture here takes a different meaning than one may expect: instead of having anything to do with trapping in the cavity, recapture refers to the return of a molecule that has recently completed a translocation through the pore.
 Ping-pong experiments at present do not use pores with any cavity structure affixed; pores are stripped down to only one nanoscale hole in one layer of silicon.
 Upon recapture, another timer, call it the recapture timer, set to a different starting value, begins counting down.
 If the molecule is observed translocating again before the recapture timer hits zero, the flip timer begins again and voltage flips again.
@@ -417,7 +430,7 @@ All analysis pipelines start by importing data files (either in pure binary or a
 
 Monodirectional experiments explored the effect of varying the moving length of translocating DNA on ECD.
 Xu Liu and I built a data analysis pipeline, using some of Angus McMullen's work, that takes the user through every step of data processing, from raw data to presentable figures.
-The data analysis for monodirectional translocations starts by detecting the start and end times of all events in order to decrease future computation time while processing said events.
+The data analysis for monodirectional translocations starts by detecting the start and end times of all events.
 Our heuristic for detecting translocations in monodirectional experiments is deviation from a baseline value \(\beta\) defined by the moving average of the previous 1ms of data (250 data points).
 We average the next 7 points, called the ``lookahead'' or ``EventTest'' \(\Lambda\) and see if it exceeds our threshold for an event.
 The last piece of data used to find event boundaries is the root mean square of the baseline \(\Omega = \beta_{RMS}\).
@@ -431,7 +444,7 @@ Each of these values is calculated tens of thousands of times per file as it is 
 \label{fig:find-events}
 \end{figure}
 
-If the lookahead is far enough away from the baseline (``far enough'' \(\Delta\) being dependent on driving voltage and specified by the user, typically a quarter of a nanoamp at 100mV), we know we may have found an event \(\xi\):
+If the lookahead is far enough away from the baseline (``far enough'' \(\Delta\) being dependent on driving voltage and specified by the user, typically one tenth of a nanoamp at 100mV), we know we may have found an event \(\xi\):
 \begin{equation} |\beta_{start}| - |\Lambda| \geq \Delta \Rightarrow \xi = \top \label{eq:event-start}\end{equation}
 where \(\beta\) is baseline value, \(\Lambda\) is lookahead value, \(\Delta\) is the cutoff value, and \(\xi\) is a boolean value specifying whether we believe we are in an event.
 We save \(\beta_{start}\) to use when detecting the end of the event and continue taking the averages \(\beta, \Lambda\) and RMS measurements \(\Omega\) as stated above.
@@ -442,7 +455,7 @@ Using Eq.~\ref{eq:event-end} to determine when an event ends allows for some bas
 We finish data sanitation by subtracting \(\beta_{start}\) from all data points in an event to shift the baseline to zero and then set all points outside the recorded start and end (with some buffer) of the event to zero.
 
 We then proceed to event classification.
-We construct a histogram of current values for all translocations by summing all data points in events as shown in \ref{fig:blockage-histogram}.
+We construct a histogram of current values for all translocations by summing all data points in events as shown in Fig.~\ref{fig:blockage-histogram}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\textwidth]{figures/blockage-histogram}
@@ -493,8 +506,8 @@ We then search forward from the zap positions when searching for beginnings of e
 An event must pass a multi-step detection procedure to be classified as such.
 First, we use our tried-and-true deviation from baseline current as a first flag.
 However, we greatly reduce the number of data points used to define baseline current to 20 from 250 in the monodirectional case.
-If lookahead current deviates far enough (defined on a per-dataset basis, typically around .15nA) from the baseline, we calculate a baseline slope value by finding the inter-data-point slopes (that is, the difference in current between adjacent data points) and averaging them.
-We do the same for the lookahead data points.
+If lookahead current deviates far enough from the baseline (defined on a per-dataset basis, typically around .15nA), we calculate baseline slope by finding the inter-data-point slopes (that is, the difference in current between adjacent data points) and averaging them.
+We make the same averages for the lookahead data points.
 If the lookahead average is greater than baseline average by .05nA/point (an arbitrary cutoff determined by lots of fiddling) we know we have found the beginning of an event.
 Detection of event ends proceeds largely the same way except it looks backward from the next recorded zap.
 
@@ -512,9 +525,10 @@ Two test cases for the effectiveness of my script were 1) a minute of data witho
 I compared event data acquired by running through the files by hand and with my script and found that neither data set proved problematic.
 For set 1 all events were found and start and end times were within .04ms (10 data points) of the exact value.
 For set 2 all events were found but one false positive was also recorded.
-[will ask Mirna for battle-tested results to further support but didn't ask early enough]
+When put through the wringer with true experimental data, the script found all events, but did not find their beginnings as precisely as wanted;
+the script is still useful for FPGA programming, but needs more tweaking to completely automate data analysis.
 
-The event pictured in Fig.~\ref{fig:tough-event} proved a particular problem for the ping-pong script.
+One class of event, an example of which is shown in Fig.~\ref{fig:tough-event}, proved a particular problem for the ping-pong script.
 Most events are on less extreme slopes of baseline and do not have such unusual event structures.
 Events like these forced me to consider how to deal with odd foldings of recaptured molecules.
 Such edge cases were handled by nesting another loop in the event-end detection to ensure that the value found is at the event's end.
@@ -528,7 +542,7 @@ Such edge cases were handled by nesting another loop in the event-end detection 
 \end{figure}
 
 For monodirectional translocations all events are also found with a few false positives.
-The processing that goes into events is visible in Figs.~\ref{fig:event-analysis}.
+The processing that goes into events is visible in Fig.~\ref{fig:event-analysis}.
 Notice that the baseline is shifted and that there is a small buffer of data points outside of the event that is left to ensure that no points within the event are zeroed because that would invalidate ECD measurements.
 
 \begin{figure}[H]
@@ -566,7 +580,13 @@ The current workaround is to discard any event ends found more than 5ms after th
 
 \section{Conclusion}
 
-My work will enable for detection of a trapped molecule's escape from the cavity.
+My work will improve ping-pong experiments by better detecting when a molecule has been recaptured.
+Presently most ping-pong sequences end with a molecule being recaptured and no voltage flip because the detection code on our FPGA uses a different method to detect a molecule's passage.
+Sadly, I did not have time to update the FPGA's code during my time in the lab.
+We chose to attack the problem with MatLab first due to the ease of rapid iteration it afforded.
+Now that we have arrived an a robust solution, implementing the derivative-focused translocation detection needs to be done to drastically improve data collection for ping-pong experiments by ping-ponging a molecule more and (hopefully) eliminating false voltage flips.
+
+My work will also enable for detection of a trapped molecule's escape from the cavity.
 The experiment I envision proceeds as the preliminary efforts did except that, after the first translocation, voltage is turned off, hopefully trapping the molecule.
 We would wait at least 200ms to allow the molecule to equilibrate but likely longer to allow the molecule to diffuse away from the structure in case it was not trapped.
 When a driving voltage is applied with the opposite polarity to remove the molecule from the chamber the equilibration of ionic flow takes a couple of milliseconds as seen in the ping-pong data.
@@ -575,11 +595,6 @@ Those two milliseconds are the most likely time for a trapped molecule to escape
 Our previous data analysis tools would not have been able to identify the molecule's exit.
 Now ours can.
 
-My work should also improve ping-pong experiments by better detecting when a molecule has been recaptured.
-Presently most ping-pong sequences end with a molecule being recaptured and no voltage flip because the detection code on our FPGA uses a different method to detect a molecule's passage.
-Sadly, I did not have time to update the FPGA's code during my time in the lab.
-We chose to attack the problem with MatLab first due to the ease of rapid iteration it afforded.
-Now that we have arrived an a robust solution, implementing the derivative-focused translocation detection needs to be done to drastically increase the amount of data collected.
 
 
 % If in two-column mode, this environment will change to single-column

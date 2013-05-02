@@ -14,7 +14,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {}Introduction}{3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A schematic of how the stacked-top-hat shape of current vs time data depends on how DNA enters the nanopore. Missing are schematics of multiply-folded molecules but, the linear relationship between current blockage and strands in the pore is made clear. Almost every thin spike in 7{}{}{}\hbox {} is of one of these forms. (Taken from Nick Hagerty's thesis.)}}{4}{}}
 \newlabel{fig:dna-approach}{{1}{4}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event. The structure has 3 main layers. From bottom to top they are the nanopore, the cavity, and a tunnel with diameter 500nm on average. (b) A photograph taken through a microscope of one of our pores. The layers are so thin that they are not completely opaque.}}{5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) A schematic of a silicon structure containing a nanopore and adjacent chamber during a DNA translocation event. The structure has 3 main layers. From bottom to top they are the nanopore, the cavity, and a tunnel with diameter 500nm on average. (b) A photo taken with an electron microscope of one of our pores. The layers are so thin that they are not completely opaque.}}{5}{}}
 \newlabel{fig:nanopore-schematic}{{2}{5}{}{}{}}
 \citation{trapping}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces An schematic of the envisioned nanopore device in which an entropic trap would effectively be a nanoscale test tube. We should be able to trap a DNA molecule by turning off voltage at the proper time (1), perform some biochemistry on it (such as segmenting it using a restriction enzyme) (2), and test whether our chemistry proceeded as planned by using the detection properties of the nanopore (3).}}{6}{}}
@@ -22,9 +22,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Attributions}{6}{}}
 \citation{exponent}
 \citation{dorfman}
-\citation{zimm-eqn}
 \@writefile{toc}{\contentsline {section}{\numberline {}Theory}{7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Statistical Properties of DNA Polymers}{7}{}}
+\citation{zimm-eqn}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Statistical properties of DNA as summarized by Dorfman. \cite  {dorfman}}}{8}{}}
 \newlabel{tab:dna-table}{{I}{8}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Trapping in More Detail}{9}{}}
@@ -49,37 +49,39 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A typical minute of monodirectional translocation data. Notice the current scale, noise, slightly unstable baseline and brevity of translocation events.}}{14}{}}
 \newlabel{fig:trans-data}{{7}{14}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {}Trapping}{14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A typical minute of trapping data. Notice the several events before and after the reversal of voltage polarity.}}{15}{}}
+\newlabel{fig:trapping-data}{{8}{15}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {}``Ping-pong'' Translocations}{15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A typical minute of ping-pong data. Important features are the ``zaps,'' where flipping the voltage created a capacitive discharge which overloaded our sensor equipment. Notice the current scale as it is several orders of magnitude larger than that of monodirectional translocations.}}{15}{}}
-\newlabel{fig:ping-pong-data}{{8}{15}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A particularly hard event to properly detect. The folded-ness of translocation and location on decaying baseline proved particularly tough to interpret.}}{17}{}}
-\newlabel{fig:tough-event}{{9}{17}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A typical minute of ping-pong data. Important features are the ``zaps,'' where flipping the voltage created a capacitive discharge which overloaded our sensor equipment. Notice the current scale as it is several orders of magnitude larger than that of monodirectional translocations.}}{16}{}}
+\newlabel{fig:ping-pong-data}{{9}{16}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A particularly hard event to properly detect. The folded-ness of translocation and location on decaying baseline proved particularly tough to interpret.}}{17}{}}
+\newlabel{fig:tough-event}{{10}{17}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {}Data Analysis with MatLab}{17}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A representation of how our MatLab script finds events in monodirectional data. Important features of the data are its relatively static baseline and event structure. The data pictured has been run through a 50kHz software filter for legibility; typical data is much noisier.}}{18}{}}
-\newlabel{fig:find-events}{{10}{18}{}{}{}}
-\newlabel{eq:event-start}{{9}{18}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces A representation of how our MatLab script finds events in monodirectional data. Important features of the data are its relatively static baseline and event structure. The data pictured has been run through a 50kHz software filter for legibility; typical data is much noisier.}}{18}{}}
+\newlabel{fig:find-events}{{11}{18}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {}Monodirectional Translocations}{18}{}}
+\newlabel{eq:event-start}{{9}{19}{}{}{}}
 \newlabel{eq:event-end}{{10}{19}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The histogram presented to the user to determine single-stranded current blockage. The effect of the asymmetry of our structure is reflected in the differing current blockage values when translocations start from one side or the other. The first two peaks are well-defined because many events have at least some portion where the molecule is folded once. Higher numbers of folds are observed more rarely so the farther peaks are more poorly defined.}}{20}{}}
-\newlabel{fig:blockage-histogram}{{11}{20}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces A chunk of ping-pong data used to build our analysis algorithms. Important features are translocations on moving baselines and the events' structures.}}{21}{}}
-\newlabel{fig:good-ping-pong}{{12}{21}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces The histogram presented to the user to determine single-stranded current blockage. The effect of the asymmetry of our structure is reflected in the differing current blockage values when translocations start from one side or the other. The first two peaks are well-defined because many events have at least some portion where the molecule is folded once. Higher numbers of folds are observed more rarely so the farther peaks are more poorly defined.}}{20}{}}
+\newlabel{fig:blockage-histogram}{{12}{20}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces A chunk of ping-pong data used to build our analysis algorithms. Important features are translocations on moving baselines and the events' structures.}}{21}{}}
+\newlabel{fig:good-ping-pong}{{13}{21}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {}Ping-Pong Translocations}{21}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}Results and Discussion}{23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces How an event is processed by the script. (a) shows a portion of the untouched recorded data before any processing has been applied. (b) shows the same event after some processing which flattens the baseline outside of the event and shifts the event to have a baseline of zero to ease ECD calculation.}}{24}{}}
-\newlabel{fig:event-analysis}{{13}{24}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces A small current spike that typically gets falsely flagged as an event. The peak is approximately .11nA from the baseline, which is a reasonable cutoff for events.}}{25}{}}
-\newlabel{fig:spike}{{14}{25}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces One of the graphs produced by the data analysis pipeline.}}{26}{}}
-\newlabel{fig:ecds}{{15}{26}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces How an event is processed by the script. (a) shows a portion of the untouched recorded data before any processing has been applied. (b) shows the same event after some processing which flattens the baseline outside of the event and shifts the event to have a baseline of zero to ease ECD calculation.}}{24}{}}
+\newlabel{fig:event-analysis}{{14}{24}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces A small current spike that typically gets falsely flagged as an event. The peak is approximately .11nA from the baseline, which is a reasonable cutoff for events.}}{25}{}}
+\newlabel{fig:spike}{{15}{25}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces One of the graphs produced by the data analysis pipeline.}}{26}{}}
+\newlabel{fig:ecds}{{16}{26}{}{}{}}
 \bibdata{bibliogrpahy}
 \bibcite{dna-hard-drive}{{1}{2013}{{dna}}{{}}}
 \bibcite{trapping}{{2}{2009}{{JT~Del Bonis-O'Donnell and Stein}}{{}}}
 \bibcite{exponent}{{3}{2008}{{Fancesco~Valle and Deitler}}{{}}}
-\bibcite{dorfman}{{4}{2010}{{Dorfman}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {}Conclusion}{27}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}Acknowledgments}{27}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}References}{27}{}}
+\bibcite{dorfman}{{4}{2010}{{Dorfman}}{{}}}
 \bibcite{zimm-eqn}{{5}{1988}{{M.~Doi}}{{}}}
 \bibcite{mobility}{{6}{1997}{{Stellwagen~NC}}{{}}}
 \bibcite{CRC}{{7}{2012-2013}{{Haynes}}{{}}}

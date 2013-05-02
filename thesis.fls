@@ -139,6 +139,9 @@ INPUT ./figures/one-event.png
 INPUT figures/monodirectional-minute.png
 INPUT ./figures/monodirectional-minute.png
 INPUT ./figures/monodirectional-minute.png
+INPUT figures/trapping-minute.png
+INPUT ./figures/trapping-minute.png
+INPUT ./figures/trapping-minute.png
 INPUT figures/ping-pong-minute.png
 INPUT ./figures/ping-pong-minute.png
 INPUT ./figures/ping-pong-minute.png
